@@ -1,0 +1,10 @@
+.container {
+
+    position: absolute;
+
+    > div {
+        border: 1px solid var(--gray-border-color-secondary);
+        border-radius: 50%;
+    }
+
+}
