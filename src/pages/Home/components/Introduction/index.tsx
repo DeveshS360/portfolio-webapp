@@ -1,4 +1,4 @@
-import { ConcentricCircles } from '../../../../ConcentricCircles'
+import { ConcentricCircles } from 'src/components/ConcentricCircles'
 import styles from './index.module.scss'
 
 export const Introduction = () => {
