@@ -15,7 +15,8 @@
     "import/resolver": {
       "node": {
         "paths": [
-          "src/*"
+          "src/*",
+          "assets/*"
         ],
         "extensions": [
           ".js",
