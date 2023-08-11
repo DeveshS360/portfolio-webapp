@@ -40,11 +40,11 @@
         }
 
         &::before {
-            animation: ripple 3s linear infinite backwards;
+            animation: ripple-effect 3s linear infinite backwards;
         }
 
         &::after {
-            animation: ripple 3s linear 0.5s infinite backwards;
+            animation: ripple-effect 3s linear 0.5s infinite backwards;
         }
     }
 
@@ -58,7 +58,7 @@
 }
 
 
-@keyframes ripple {
+@keyframes ripple-effect {
     
     0% {
         transform: scale(1);
