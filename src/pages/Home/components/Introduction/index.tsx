@@ -2,6 +2,7 @@ import { ConcentricCircles } from 'src/components/ConcentricCircles'
 import styles from './index.module.scss'
 import { NavigationHeader } from 'src/components/NavigationHeader'
 import { DownloadResume } from 'src/components/DownloadResume'
+import { WorkSampleVideo } from 'src/components/WorkSampleVideo'
 
 export const Introduction = () => {
   return (
@@ -21,12 +22,18 @@ export const Introduction = () => {
         </div>
         <p className={styles.brief_skills}>
           UI Developer specialized in web development in ReactJS and related
-          technologies
+          technologies.
         </p>
         <div className={styles.resume}>
           <DownloadResume />
         </div>
+        <WorkSampleVideo />
       </section>
+      <ConcentricCircles
+        className={styles.bottom_right_circle}
+        circularGap={65}
+        size={440}
+      />
     </div>
   )
 }

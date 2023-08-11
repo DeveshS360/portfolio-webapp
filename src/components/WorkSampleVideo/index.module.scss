@@ -1,0 +1,77 @@
+@import '../../styles/mixins.scss';
+
+.work_sample_video {
+
+    display: flex;
+    align-items: center;
+    gap: 0px 40px;
+
+    .round_btn {
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--bg-color-secondary);
+        z-index: 1;
+        position: relative;
+        
+        .icon {
+            display: block;
+            text-decoration: none;
+
+            &::after {
+                font-family: 'Ico';
+                content: '\ec74';
+                color: var(--text-color-secondary);
+                font-size: 16px;
+
+    
+            }
+        }
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            inset: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px rgba(255,255,255,.6);
+        }
+
+        &::before {
+            animation: ripple 3s linear infinite backwards;
+        }
+
+        &::after {
+            animation: ripple 3s linear 0.5s infinite backwards;
+        }
+    }
+
+
+    .text {
+        font-family: 'Poppins-Regular';
+        color: var(--text-color-secondary)
+    }
+
+
+}
+
+
+@keyframes ripple {
+    
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+}
