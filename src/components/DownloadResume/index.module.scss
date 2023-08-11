@@ -1,0 +1,15 @@
+.get_resume {
+
+    font-size: 15px;
+    padding: 30px 60px;
+    border-radius: 42px;
+    &::after {
+        content: '\ef08';
+        margin-left: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}

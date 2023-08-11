@@ -18,7 +18,7 @@ export const NavigationHeader = () => {
           </span>
         ))}
       </div>
-      <button className={styles.contact}>Hire Me </button>
+      <button className={styles.cta}>Hire Me </button>
     </nav>
   )
 }

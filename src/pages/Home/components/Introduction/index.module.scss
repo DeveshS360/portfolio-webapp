@@ -3,8 +3,10 @@
     background-color: var(--bg-color-primary);
     position: relative;
     width: 100%;
-    height: 600px;
-
+    height: 100%;
+    padding-bottom: 100px;
+    overflow: hidden;
+    
     .top_left_circle {
 
         position: absolute;
@@ -13,5 +15,53 @@
         top: 0;
         left: 0;
         transform: translate(-50%, -70%);
+    }
+
+    .info {
+        margin-left: 15%;
+    }
+
+    .about {
+        color: var(--text-color-primary);
+        margin-top: 50px;
+        line-height: 1.5;
+
+        font-family: 'Cormorant-Bold';
+        .text {
+            font-size: 70px;
+        }
+    
+        .name {
+            font-size: 85px;
+        }
+
+        .underline {
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 150%;
+                height: 100%;
+                position: absolute;
+                background: url('/assets/images/name-underline.png') no-repeat;
+                bottom: 0px;
+                left: -20px;
+                top: 90px;
+            }
+        }
+    }
+
+    .brief_skills {
+        font-family: 'Poppins-Regular';
+        font-size: 18px;
+        max-width: 40%;
+        color: var(--text-color-secondary);
+        max-width: 450px;
+        margin-top: 50px;
+    }
+
+    .resume {
+        margin-top: 50px;
     }
 }

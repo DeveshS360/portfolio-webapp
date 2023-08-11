@@ -1,5 +1,5 @@
 .navigation_header {
-    width: 80%;
+    width: 70%;
     background: inherit;
     margin: 0 auto;
     display: flex;
@@ -56,33 +56,33 @@
         }
     }
 
-    .contact {
-        display: flex;
-        align-items: center;
-        gap: 0px 5px;
-        background: inherit;
-        border: 1px solid var(--gray-border-color-secondary);
-        border-radius: 32px;
-        padding: 10px 30px;
-        cursor: pointer;
+}
 
-        color: var(--text-color-primary);
-        font-size: 18px;
-        font-family: 'Poppins-Regular';
-        transition: all 0.5s ease;
 
-        &::after {
-            content: url('/assets/images/chevron-icon.svg');
-            transform: scale(0.7);
-            margin-top: 6px;
-        }
+.cta {
+    display: flex;
+    align-items: center;
+    gap: 0px 5px;
+    background: inherit;
+    border: 1px solid var(--gray-border-color-secondary);
+    border-radius: 32px;
+    padding: 18px 45px;
+    cursor: pointer;
 
-        &:hover {
-            background: var(--bg-color-secondary);
-            border: 1px solid var(--bg-color-secondary);
-            transition: all 0.5s ease;
-        }
+    color: var(--text-color-primary);
+    font-size: 18px;
+    font-family: 'Poppins-Regular';
+    transition: all 0.5s ease;
+
+    &::after {
+        content: '\ea7c';
+        font-family: 'Ico';
+        margin-left: 10px;
     }
 
-
+    &:hover {
+        background: var(--bg-color-secondary);
+        border: 1px solid var(--bg-color-secondary);
+        transition: all 0.5s ease;
+    }
 }
