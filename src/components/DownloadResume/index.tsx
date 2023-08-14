@@ -6,7 +6,7 @@ export const DownloadResume = () => {
   return (
     <button className={cx(styles.get_resume, buttonStyles.cta)}>
       <a
-        href="/assets/Devesh_Sharma_Resume.pdf"
+        href="public/Devesh_Sharma_Resume.pdf"
         download="Devesh_Sharma_Resume.pdf"
       >
         Get Resume
