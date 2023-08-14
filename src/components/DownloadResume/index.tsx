@@ -4,10 +4,10 @@ import cx from 'classnames'
 
 export const DownloadResume = () => {
   return (
-    <button className={cx(styles.get_resume, buttonStyles.cta)}>
-      <a href="Devesh_Sharma_Resume.pdf" download="Devesh_Sharma_Resume.pdf">
+    <a href="Devesh_Sharma_Resume.pdf" download="Devesh_Sharma_Resume.pdf">
+      <button className={cx(styles.get_resume, buttonStyles.cta)}>
         Get Resume
-      </a>
-    </button>
+      </button>
+    </a>
   )
 }
