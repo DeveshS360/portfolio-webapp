@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 export interface ConcentricCirclesProps {
   size: number
@@ -6,4 +6,5 @@ export interface ConcentricCirclesProps {
   style?: React.CSSProperties
   circularGap: number
   count?: number
+  children?: ReactNode
 }

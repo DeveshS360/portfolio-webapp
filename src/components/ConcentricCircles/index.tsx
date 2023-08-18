@@ -3,7 +3,7 @@ import cx from 'classnames'
 import styles from './index.module.scss'
 
 export const ConcentricCircles = (props: ConcentricCirclesProps) => {
-  const { className, style, size, circularGap, count = 3 } = props
+  const { className, style, size, circularGap, count = 3, children } = props
   const additionalSize = 2 * circularGap
 
   return (
@@ -26,6 +26,7 @@ export const ConcentricCircles = (props: ConcentricCirclesProps) => {
           ></div>
         )
       })}
+      {children}
     </div>
   )
 }
