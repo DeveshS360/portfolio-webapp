@@ -1,0 +1,59 @@
+@import '../../styles/mixins.scss';
+
+.overaly {
+    position: fixed;
+    inset: 0;
+    background: rgba(23, 23, 23, 0.85);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    transition: all 0.5s linear;
+
+    .video_container {
+
+        @include take-to-center;
+        opacity: inherit;
+        transition: inherit;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+
+    
+        .video {
+            border-radius: 5px;
+            border: none;
+            border: none;
+            opacity: inherit;
+            transition: inherit;
+            margin: 40px 0;
+        }
+    }
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.5 linear;
+
+        .video {
+            opacity: inherit;
+            transition: inherit;
+        }
+    }
+
+    .cross {
+        border: none;
+        background: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: var(--text-color-primary);
+        font-family: 'Poppins-Regular';
+        cursor: pointer;
+        font-size: 20px;
+        transform: scaleX(1.3);
+
+    }
+}
