@@ -11,10 +11,10 @@
     justify-content: center;
 }
 
-@mixin put-on-circle ($count, $radius, $angle) {
+@mixin put-on-circle ($count, $radius, $angle, $initialRotation) {
 
 
-    $rot: 0;
+    $rot: $initialRotation;
 
     @for $i from 1 through $count {
         > :nth-of-type(#{$i}) {

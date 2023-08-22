@@ -7,4 +7,5 @@ export interface ConcentricCirclesProps {
   circularGap: number
   count?: number
   children?: ReactNode
+  boldIdx?: number
 }

@@ -6,7 +6,7 @@
     background: rgba(23, 23, 23, 0.85);
     opacity: 0;
     visibility: hidden;
-    z-index: 2;
+    z-index: 999;
     transition: all 0.5s linear;
 
     .video_container {
