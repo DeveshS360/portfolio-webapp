@@ -1,0 +1,31 @@
+@import '../../styles/mixins.scss';
+
+.social_section {
+    background: inherit;
+
+    .image_section {
+        position: relative;
+        width: 400px;
+        height: 100%;
+
+        .hero {
+            position: absolute;
+            top: 20%;
+            left: 8%;
+            transform: scale(1.6);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .circles {
+            position: absolute;
+            top: 60%;
+            left: 100%;
+        }
+    }
+
+    .social_icons_container {
+
+      @include put-on-circle(4, 280px, 45, -90)
+    }
+}

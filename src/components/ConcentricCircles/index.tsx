@@ -3,7 +3,15 @@ import cx from 'classnames'
 import styles from './index.module.scss'
 
 export const ConcentricCircles = (props: ConcentricCirclesProps) => {
-  const { className, style, size, circularGap, count = 3 } = props
+  const {
+    className,
+    style,
+    size,
+    circularGap,
+    count = 3,
+    children,
+    boldIdx,
+  } = props
   const additionalSize = 2 * circularGap
 
   return (
@@ -23,9 +31,11 @@ export const ConcentricCircles = (props: ConcentricCirclesProps) => {
                 computedSize / 2
               }px)`,
             }}
+            className={cx({ [styles.bold]: idx + 1 === boldIdx })}
           ></div>
         )
       })}
+      {children}
     </div>
   )
 }

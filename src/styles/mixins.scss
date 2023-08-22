@@ -10,3 +10,22 @@
     align-items: center;
     justify-content: center;
 }
+
+@mixin put-on-circle ($count, $radius, $angle, $initialRotation) {
+
+
+    $rot: $initialRotation;
+
+    @for $i from 1 through $count {
+        > :nth-of-type(#{$i}) {
+          @include take-to-center();
+          transform: 
+            translate(-50%, -50%)
+            rotate($rot * 1deg) 
+            translateX($radius) 
+            rotate($rot * -1deg);
+        }
+  
+        $rot: $rot + $angle;
+      }
+}
