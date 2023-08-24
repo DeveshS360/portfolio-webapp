@@ -15,7 +15,7 @@ export const ConcentricCircles = (props: ConcentricCirclesProps) => {
   const additionalSize = 2 * circularGap
 
   return (
-    <div className={cx(styles.container, className)} style={style}>
+    <div className={cx(styles.container, className)}>
       {new Array(count).fill(null).map((circle, idx) => {
         const computedSize = size + idx * additionalSize
         return (
@@ -30,6 +30,7 @@ export const ConcentricCircles = (props: ConcentricCirclesProps) => {
               transform: `translate(-${computedSize / 2}px, -${
                 computedSize / 2
               }px)`,
+              ...style,
             }}
             className={cx({ [styles.bold]: idx + 1 === boldIdx })}
           ></div>

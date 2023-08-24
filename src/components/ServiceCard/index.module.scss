@@ -1,0 +1,61 @@
+.card {
+    padding: 70px;
+    background: var(--bg-color-primary);
+    max-width: fit-content;
+    min-width: fit-content;
+    position: relative;
+    overflow: hidden;
+
+    * {
+        color: var(--text-color-primary);
+    }
+
+    .title {
+        font-family: 'Poppins-Regular';
+        font-size: 28px;
+        margin: 50px 0 40px 0;
+    }
+    .bullet_point {
+        font-family: 'Poppins-Regular';
+        font-size: 16px;
+        color: var(--text-color-secondary);
+        min-width: 200px;
+
+        &::before {
+            content: '\ea7c';
+            margin-right: 20px;
+            font-family: 'Ico';
+
+        }
+    }
+
+    .circles {
+        position: absolute;
+        right: -20%;
+        visibility: hidden;
+        transform: scale(0);
+        transition: all 0.5s ease-out;
+        opacity: 0;
+
+    }
+    
+    .top_circles {
+        top: -10%;
+        
+    }
+
+    .bottom_circles {
+        bottom: -10%;
+    }
+
+    &:hover {
+        .circles {
+            visibility: visible;
+            transition: all 0.5s ease-out;
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+
+}
