@@ -1,5 +1,7 @@
 export interface ServiceCardProps {
-  imageUrl?: string
-  title?: string
-  bulletPoints?: string[]
+  cardData: {
+    imageUrl: string
+    title: string
+    bulletPoints: string[]
+  }
 }

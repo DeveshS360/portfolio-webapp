@@ -1,21 +1,15 @@
 import { ConcentricCircles } from '../ConcentricCircles'
 import styles from './index.module.scss'
-import serviceIcon from 'assets/images/service-icon-1.webp'
 import cx from 'classnames'
+import { ServiceCardProps } from './types'
 
-export const ServiceCard = () => {
-  const bulletPoint = [
-    'Landing pages',
-    'User flow',
-    'Wire framing',
-    'Prototyping',
-  ]
-
+export const ServiceCard = (props: ServiceCardProps) => {
+  const { bulletPoints, imageUrl, title } = props.cardData
   return (
     <div className={styles.card}>
-      <img src={serviceIcon} alt="card-icon" />
-      <p className={styles.title}>UI/UX Design</p>
-      {bulletPoint.map((bulletContent, idx) => {
+      <img src={imageUrl} alt="card-icon" />
+      <p className={styles.title}>{title}</p>
+      {bulletPoints.map((bulletContent, idx) => {
         return (
           <p className={styles.bullet_point} key={idx}>
             {bulletContent}
