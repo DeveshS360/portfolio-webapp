@@ -12,8 +12,7 @@ export const ClientServices = () => {
           <span className={styles.title}>My Services</span>
         </div>
         <div className={styles.heading}>Service Provide For My Clients.</div>
-        <Carousel>
-          <ServiceCard />
+        <Carousel countInFrame={3}>
           <ServiceCard />
           <ServiceCard />
           <ServiceCard />
