@@ -1,0 +1,38 @@
+.carousel_wrapper {
+    .carousel {
+        width: 100%;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0px 90px;
+    
+    }
+
+
+    .dots_container {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 0 20px;
+        padding: 50px;
+        margin: 0 auto;
+
+        .dots {
+            width: 12px;
+            height: 12px;
+            background: rgb(255,255,255, 0.09);
+            border-radius: 50%;
+            cursor: pointer;
+
+            &.selected {
+                background: var(--text-color-primary);
+            }
+        }
+
+        
+    }
+}

@@ -2,6 +2,7 @@ import { EmbeddedVideoProps } from './types'
 import styles from './index.module.scss'
 import cx from 'classnames'
 import { useEffect } from 'react'
+import { CloseOutlined } from '@ant-design/icons'
 
 export const EmbeddedVideo = (props: EmbeddedVideoProps) => {
   const {
@@ -18,9 +19,15 @@ export const EmbeddedVideo = (props: EmbeddedVideoProps) => {
   }, [showVideo])
 
   return (
-    <div className={cx(styles.overaly, { [styles.visible]: showVideo })}>
+    <div
+      className={cx(styles.overaly, { [styles.visible]: showVideo })}
+      onClick={() => setShowVideo(false)}
+    >
       <div className={styles.video_container}>
         <iframe
+          onClick={(e) => {
+            e.stopPropagation()
+          }}
           className={styles.video}
           width={width}
           height={height}
@@ -29,7 +36,9 @@ export const EmbeddedVideo = (props: EmbeddedVideoProps) => {
         />
       </div>
       <button className={styles.cross} onClick={() => setShowVideo(false)}>
-        x
+        <CloseOutlined
+          style={{ color: 'var(--text-color-primary', fontSize: 20 }}
+        />
       </button>
     </div>
   )
