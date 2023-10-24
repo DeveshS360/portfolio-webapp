@@ -29,3 +29,21 @@
         $rot: $rot + $angle;
       }
 }
+
+@mixin for-small-desktop {
+    @media screen and (min-width: 1000px) and (max-width: 1299px){
+        @content ;
+    }
+}
+
+@mixin for-medium-desktop {
+    @media screen and (min-width: 1300px) and (max-width: 1599px){
+        @content ;
+    }
+}
+
+@mixin for-large-desktop {
+    @media screen and (min-width: 1600px) {
+        @content ;
+    }
+}

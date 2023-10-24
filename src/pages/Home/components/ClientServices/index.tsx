@@ -13,11 +13,11 @@ export const ClientServices = () => {
           <span className={styles.title}>My Services</span>
         </div>
         <div className={styles.heading}>Service Provide For My Clients.</div>
-        <Carousel countInFrame={3}>
+        <div className={styles.cards_container}>
           {CAROUSEL_DATA.map((data, idx) => (
             <ServiceCard key={idx} cardData={data} />
           ))}
-        </Carousel>
+        </div>
       </div>
     </div>
   )

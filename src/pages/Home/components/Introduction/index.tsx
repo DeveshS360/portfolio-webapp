@@ -4,14 +4,16 @@ import { NavigationHeader } from 'src/components/NavigationHeader'
 import { DownloadResume } from 'src/components/DownloadResume'
 import { WorkSampleVideo } from 'src/components/WorkSampleVideo'
 import { SocialSection } from 'src/components/SocialSection'
+import { IS_SMALL_DESKTOP } from 'src/constants/screen'
 
 export const Introduction = () => {
+
   return (
     <div className={styles.introduction}>
       <NavigationHeader />
       <ConcentricCircles
         className={styles.top_left_circle}
-        circularGap={65}
+        circularGap={IS_SMALL_DESKTOP ? 55 :  65}
         size={440}
       />
       <div className={styles.main}>
@@ -36,7 +38,7 @@ export const Introduction = () => {
       </div>
       <ConcentricCircles
         className={styles.bottom_right_circle}
-        circularGap={65}
+        circularGap={IS_SMALL_DESKTOP ? 55 :  65}
         size={440}
       />
     </div>
