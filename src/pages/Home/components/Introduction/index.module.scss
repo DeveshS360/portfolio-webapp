@@ -1,3 +1,5 @@
+@import 'src/styles/mixins.scss';
+
 .introduction {
     
     background-color: var(--bg-color-primary);
@@ -21,7 +23,16 @@
     }
 
     .info {
-        margin-left: 15%;
+        margin-left: calc((100% - var(--big-desktop-content-width))/2);
+
+        @include for-medium-desktop {
+            margin-left: calc((100% - var(--medium-desktop-content-width))/2);
+        }
+
+        @include for-small-desktop {
+            margin-left: calc((100% - var(--small-desktop-content-width))/2);
+        }
+        
     }
 
     .about {

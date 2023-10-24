@@ -1,5 +1,16 @@
+@import 'src/styles/mixins.scss';
+
 .navigation_header {
-    width: 70%;
+    width: var(--big-desktop-content-width);
+
+    @include for-small-desktop {
+        width: var(--small-desktop-content-width);
+    }
+
+    @include for-medium-desktop {
+        width: var(--medium-desktop-content-width);
+    }
+
     background: inherit;
     margin: 0 auto;
     display: flex;
@@ -12,6 +23,15 @@
         top: 0;
         z-index: 4;
         width: 70%;
+
+        @include for-small-desktop {
+            width: var(--small-desktop-content-width);
+        }
+
+        @include for-medium-desktop {
+            width: var(--medium-desktop-content-width);
+        }
+
         animation: scroll-animate 0.5s linear ;
         padding: 30px 15%;
     }
@@ -23,12 +43,18 @@
         color: var(--text-color-primary);
         font-family: 'Cormorant-Semibold';
         font-size: 36px;
+        margin-top:  -3px;
     }
 
     .container {
         display: flex;
         align-items: center;
         gap: 0px 60px;
+
+        @include for-small-desktop {
+            gap: 0px 30px;
+        }
+
         cursor: pointer;
 
         > span {
@@ -38,6 +64,7 @@
             font-family: 'Poppins-Regular';
             padding: 5px;
             transition: all 0.5s ease;
+            margin-top: 5px;
 
             .cursive {
                 visibility: hidden;
