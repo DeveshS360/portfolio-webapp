@@ -12,7 +12,7 @@ export const ClientServices = () => {
           <span className={cx(styles.title, styles.pipe)}>||</span>
           <span className={styles.title}>My Services</span>
         </div>
-        <div className={styles.heading}>Service Provide For My Clients.</div>
+        <div className={styles.heading}>Service Provided For My Clients.</div>
         <div className={styles.cards_container}>
           {CAROUSEL_DATA.map((data, idx) => (
             <ServiceCard key={idx} cardData={data} />

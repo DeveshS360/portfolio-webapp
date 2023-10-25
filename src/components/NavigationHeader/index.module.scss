@@ -23,17 +23,20 @@
         top: 0;
         z-index: 4;
         width: 70%;
+        padding: 30px 15%;
 
         @include for-small-desktop {
             width: var(--small-desktop-content-width);
+            padding: 30px calc((100% - var(--small-desktop-content-width))/2);
         }
 
         @include for-medium-desktop {
             width: var(--medium-desktop-content-width);
+            padding: 30px calc((100% - var(--medium-desktop-content-width))/2);
         }
 
         animation: scroll-animate 0.5s linear ;
-        padding: 30px 15%;
+        
     }
 
     .logo_section {

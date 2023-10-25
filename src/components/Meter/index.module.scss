@@ -1,34 +1,19 @@
 .container {
-    width: 80%;
+    width: 100%;
+    box-sizing: border-box;
     padding: 36px;
     background: var(--bg-color-secondary);
-    margin: 0 auto;
 
     .field {
         font-size: 18px;
         color: var(--text-color-secondary);
+        font-family: 'Poppins-Regular';
+    }
+
+    .meter_wrapper {
+        width: 100%;
+        background: var(--gray-border-color-secondary);
+        height: 5px;
     }
     
-}
-
-@keyframes progress-animate {
-    
-    0% {
-        background-size: 0;
-    }
-
-    100% {
-        background-size: 100%;
-    }
-}
-
-@keyframes percent-indicator-animate {
-    
-    0% {
-        margin-left: 0%;
-    }
-
-    100% {
-        margin-left: 50%;
-    }
 }

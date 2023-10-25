@@ -1,37 +1,47 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { MeterProps } from './types'
 import styles from './index.module.scss'
+import { checkInViewPort } from 'src/utils/viewport'
 
 export const Meter = (props: MeterProps) => {
   const { field, percentage } = props
   const [percent, setPercent] = useState(0)
 
+  const meterRef = useRef<HTMLDivElement>(null)
+
+  const handleScroll = () => {
+    if (!meterRef.current) return
+    if (checkInViewPort(meterRef.current) && !percent) setPercent(percentage)
+  }
+
   useEffect(() => {
-    setPercent(percentage)
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.addEventListener('scroll', handleScroll)
   }, [])
 
   const percentStyle = {
     fontFamily: 'Poppins-Regular',
     fontSize: '18px',
-    marginLeft: `${percent / 2}%`,
+    marginLeft: `${percent}%`,
     color: 'var(--text-color-secondary)',
-    transition: 'all 2s ease-in-out',
+    transition: 'all 1s ease-in-out',
   }
 
   const meterStyle = {
-    width: '100%',
-    height: '5px',
-    overflow: 'hidden',
-    background:
-      'linear-gradient(to right, var(--text-color-primary) 50%, transparent 0) no-repeat',
-    backgroundSize: `${percent}%`,
-    transition: 'all 2s ease-in-out',
+    width: `${percent}%`,
+    height: 'inherit',
+    background: 'var(--text-color-primary)',
+    transition: 'all 1s ease-in-out',
   }
 
   return (
     <div className={styles.container}>
-      <div style={percentStyle}>{percent}</div>
-        <div style={meterStyle} />
+      <div className={styles.field}>{field}</div>
+      <div style={percentStyle}>{percent}%</div>
+      <div className={styles.meter_wrapper}>
+        <div ref={meterRef} style={meterStyle} />
+      </div>
     </div>
   )
 }
