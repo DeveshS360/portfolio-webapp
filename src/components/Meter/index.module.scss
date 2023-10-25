@@ -1,0 +1,34 @@
+.container {
+    width: 80%;
+    padding: 36px;
+    background: var(--bg-color-secondary);
+    margin: 0 auto;
+
+    .field {
+        font-size: 18px;
+        color: var(--text-color-secondary);
+    }
+    
+}
+
+@keyframes progress-animate {
+    
+    0% {
+        background-size: 0;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes percent-indicator-animate {
+    
+    0% {
+        margin-left: 0%;
+    }
+
+    100% {
+        margin-left: 50%;
+    }
+}
