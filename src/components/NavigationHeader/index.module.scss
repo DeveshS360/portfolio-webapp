@@ -47,6 +47,8 @@
         font-family: 'Cormorant-Semibold';
         font-size: 36px;
         margin-top:  -3px;
+        position: relative;
+        z-index: 20;
     }
 
     .container {

@@ -5,7 +5,7 @@ export const useInViewPort = (scrollFn: () => void) => {
     window.addEventListener('scroll', scrollFn)
 
     return () => window.addEventListener('scroll', scrollFn)
-  }, [])
+  }, [scrollFn])
 }
 
 

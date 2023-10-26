@@ -5,7 +5,7 @@ import { Metric } from 'src/components/Metric'
 import {
   CalendarOutlined,
   CodepenOutlined,
-  UserOutlined,
+  FolderOpenOutlined,
 } from '@ant-design/icons'
 
 export const MetricsSection = () => {
@@ -14,7 +14,7 @@ export const MetricsSection = () => {
     <div className={cx(layoutStyles.client_services, styles.metrics)}>
       <div className={cx(layoutStyles.container, styles.content)}>
         <Metric
-          icon={<UserOutlined style={iconStyle} />}
+          icon={<FolderOpenOutlined style={iconStyle} />}
           count={20}
           countSuffix="+"
           text="Git repos worked on"
