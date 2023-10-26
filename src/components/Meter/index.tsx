@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { MeterProps } from './types'
 import styles from './index.module.scss'
 import { checkInViewPort, useInViewPort } from 'src/utils/viewport'
@@ -9,11 +9,16 @@ export const Meter = (props: MeterProps) => {
 
   const meterRef = useRef<HTMLDivElement>(null)
 
-  const handleScroll = useCallback(() => {
-    if (percent) return
+  const animationRef = useRef(false)
+
+  const handleScroll = () => {
+    if (animationRef.current) return
     if (!meterRef.current) return
-    if (checkInViewPort(meterRef.current)) setPercent(percentage)
-  }, [percent])
+    if (checkInViewPort(meterRef.current)) {
+      animationRef.current = true
+      setPercent(percentage)
+    }
+  }
 
   useInViewPort(handleScroll)
 

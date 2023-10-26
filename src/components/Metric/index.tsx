@@ -1,13 +1,15 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 import { MetricProps } from './types'
 import { convertToDecimal } from 'src/utils/number'
 import { checkInViewPort, useInViewPort } from 'src/utils/viewport'
 
 export const Metric = (props: MetricProps) => {
-  const { icon, text, count, countSuffix } = props
+  const { icon, text, count, countSuffix, isWholeNumber = false } = props
 
   const [currCount, setCurrCount] = useState(-1)
+
+  const animationRef = useRef(false)
 
   const timeToBecomeEqualToCountInSeconds = 2.5
 
@@ -22,20 +24,21 @@ export const Metric = (props: MetricProps) => {
 
   const metricRef = useRef<HTMLDivElement>()
 
-  const handleScroll = useCallback(() => {
-    if (currCount !== -1) return
+  const handleScroll = () => {
+    if (animationRef.current) return
     if (!metricRef.current) return
     if (checkInViewPort(metricRef.current)) {
+      animationRef.current = true
       setCurrCount(0)
     }
-  }, [currCount])
+  }
 
   useInViewPort(handleScroll)
 
   const increaseNumberToCount = () => {
-    if (Math.floor(currCount) >= count) {
+    if (currCount >= count) {
       clearInterval(intervalRef.current)
-      setCurrCount((prev) => Math.ceil(prev))
+      if (isWholeNumber) setCurrCount((prev) => Math.ceil(prev))
       return
     }
 

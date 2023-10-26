@@ -1,11 +1,11 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 export const useInViewPort = (scrollFn: () => void) => {
   useEffect(() => {
     window.addEventListener('scroll', scrollFn)
 
     return () => window.addEventListener('scroll', scrollFn)
-  }, [scrollFn])
+  }, [])
 }
 
 

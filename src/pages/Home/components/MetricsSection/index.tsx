@@ -18,6 +18,7 @@ export const MetricsSection = () => {
           count={20}
           countSuffix="+"
           text="Git repos worked on"
+          isWholeNumber
         />
         <Metric
           icon={<CodepenOutlined style={iconStyle} />}
@@ -27,8 +28,7 @@ export const MetricsSection = () => {
         />
         <Metric
           icon={<CalendarOutlined style={iconStyle} />}
-          count={2}
-          countSuffix="+"
+          count={2.4}
           text="Years of experience"
         />
       </div>

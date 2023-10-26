@@ -5,4 +5,5 @@ export interface MetricProps {
     text: string;
     icon: ReactNode;
     countSuffix?: string;
+    isWholeNumber?: boolean;
 }
