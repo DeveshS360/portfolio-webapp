@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { MeterProps } from './types'
 import styles from './index.module.scss'
-import { checkInViewPort } from 'src/utils/viewport'
+import { checkInViewPort, useInViewPort } from 'src/utils/viewport'
 
 export const Meter = (props: MeterProps) => {
   const { field, percentage } = props
@@ -9,16 +9,18 @@ export const Meter = (props: MeterProps) => {
 
   const meterRef = useRef<HTMLDivElement>(null)
 
+  const animationRef = useRef(false)
+
   const handleScroll = () => {
+    if (animationRef.current) return
     if (!meterRef.current) return
-    if (checkInViewPort(meterRef.current) && !percent) setPercent(percentage)
+    if (checkInViewPort(meterRef.current)) {
+      animationRef.current = true
+      setPercent(percentage)
+    }
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.addEventListener('scroll', handleScroll)
-  }, [])
+  useInViewPort(handleScroll)
 
   const percentStyle = {
     fontFamily: 'Poppins-Regular',
@@ -38,7 +40,7 @@ export const Meter = (props: MeterProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.field}>{field}</div>
-      <div style={percentStyle}>{percent}%</div>
+      <div style={percentStyle}>{percentage}%</div>
       <div className={styles.meter_wrapper}>
         <div ref={meterRef} style={meterStyle} />
       </div>

@@ -1,0 +1,1 @@
+export const convertToDecimal = (val: number, upto: number) => Number(val.toFixed(upto))
