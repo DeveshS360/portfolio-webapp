@@ -1,3 +1,14 @@
+import { useEffect } from "react"
+
+export const useInViewPort = (scrollFn: () => void) => {
+  useEffect(() => {
+    window.addEventListener('scroll', scrollFn)
+
+    return () => window.addEventListener('scroll', scrollFn)
+  }, [])
+}
+
+
 export const checkInViewPort = (ele: HTMLElement) => {
   const boundingRect = ele.getBoundingClientRect()
 
