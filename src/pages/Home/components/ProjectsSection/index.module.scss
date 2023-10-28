@@ -1,0 +1,39 @@
+@import 'src/styles/mixins.scss';
+
+.project_section {
+
+    .navigation {
+       @include flex-center;
+       justify-content: space-between;
+       align-items: start;
+
+
+        .nav_btn_container {
+            display: flex;
+            gap: 0px 20px;
+
+            .nav_cta {
+                position: relative;
+                width: 6vw;
+                height: 6vw;
+                background: inherit;
+                border: 1px solid var(--gray-border-color-secondary);
+                color: var(--text-color-secondary);
+
+                &::before {
+                    content: '\ea7c';
+                    @include take-to-center;
+                    font-family: 'Ico';
+                    font-size: 18px;
+        
+                }
+
+                &.left {
+                    transform: rotate(180deg);
+                }
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,46 @@
+@import 'src/styles/mixins.scss';
+
+.project_card {
+    max-width: calc(50% - var(--project-card-gap)/2);
+    min-width: calc(50% - var(--project-card-gap)/2);
+
+    .img_container {
+        width: 100%;
+        overflow: hidden;
+        opacity: 0.95;
+        position: relative;
+        flex-shrink: 0;
+        cursor: pointer;
+        margin-bottom: 40px;
+
+        .square_box {
+            height: 0;
+            padding-bottom: 100%;
+            background: var(--bg-color-primary);
+
+        }
+
+        .faded_pic {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            opacity: 0.1;
+            width: 80%;
+            
+        }
+
+        .project_pic {
+            @include take-to-center;
+            width: 90%;
+            border-radius: 10px;
+        }
+    }
+
+    .title {
+        font-family: 'Poppins-Medium';
+        font-size: 2vw;
+        color: var(--text-color-primary);
+    }
+    
+}

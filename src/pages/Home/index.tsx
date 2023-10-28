@@ -1,6 +1,7 @@
 import { ClientServices } from './components/ClientServices'
 import { Introduction } from './components/Introduction'
 import { MetricsSection } from './components/MetricsSection'
+import { ProjectSection } from './components/ProjectsSection'
 import { SpecialSkills } from './components/SpecialSkills'
 
 export const Home = () => {
@@ -10,6 +11,7 @@ export const Home = () => {
       <ClientServices />
       <SpecialSkills />
       <MetricsSection />
+      <ProjectSection />
     </>
   )
 }

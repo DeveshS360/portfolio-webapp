@@ -1,7 +1,6 @@
 import { ServiceCard } from 'src/components/ServiceCard'
 import styles from './index.module.scss'
 import cx from 'classnames'
-import { Carousel } from 'src/components/Carousel'
 import { CAROUSEL_DATA } from 'src/constants'
 
 export const ClientServices = () => {
