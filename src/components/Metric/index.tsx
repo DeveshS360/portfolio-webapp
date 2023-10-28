@@ -7,11 +7,11 @@ import { checkInViewPort, useInViewPort } from 'src/utils/viewport'
 export const Metric = (props: MetricProps) => {
   const { icon, text, count, countSuffix, isWholeNumber = false } = props
 
-  const [currCount, setCurrCount] = useState(-1)
+  const [currCount, setCurrCount] = useState(0)
 
   const animationRef = useRef(false)
 
-  const timeToBecomeEqualToCountInSeconds = 2.5
+  const timeToBecomeEqualToCountInSeconds = 1
 
   const frequencyChangePerSecond = 25
 
@@ -29,7 +29,7 @@ export const Metric = (props: MetricProps) => {
     if (!metricRef.current) return
     if (checkInViewPort(metricRef.current)) {
       animationRef.current = true
-      setCurrCount(0)
+      setCurrCount(0.01)
     }
   }
 
@@ -52,7 +52,7 @@ export const Metric = (props: MetricProps) => {
   }
 
   useEffect(() => {
-    if (currCount === -1) return
+    if (!animationRef.current) return
     intervalRef.current = setInterval(
       increaseNumberToCount,
       1000 / frequencyChangePerSecond
