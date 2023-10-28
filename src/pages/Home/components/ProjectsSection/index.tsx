@@ -5,11 +5,33 @@ import cx from 'classnames'
 import { useState } from 'react'
 import { ProjectsCarousel } from 'src/components/ProjectsCarousel'
 import { NavOptions } from 'src/components/ProjectsCarousel/types'
+import projectImg from 'assets/images/sportia.png'
+import projectBg1 from 'assets/images/dummy_project1.webp'
+import projectBg2 from 'assets/images/dummy_project2.webp'
+import projectBg3 from 'assets/images/dummy_project3.webp'
+import projectBg4 from 'assets/images/dummy_project4.webp'
 
 export const ProjectSection = () => {
   const [activeItem, setActiveItem] = useState(0)
 
-  const items = new Array(8).fill(null)
+  const items = [
+    {
+      projectImg,
+      backgroundImg: projectBg1,
+    },
+    {
+      projectImg,
+      backgroundImg: projectBg2,
+    },
+    {
+      projectImg,
+      backgroundImg: projectBg3,
+    },
+    {
+      projectImg,
+      backgroundImg: projectBg4,
+    },
+  ]
 
   const handleNavigation = (action: NavOptions) => {
     if (action === NavOptions.prev && activeItem > 0)
