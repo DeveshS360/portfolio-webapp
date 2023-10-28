@@ -8,6 +8,7 @@
     opacity: 0.95;
     position: relative;
     flex-shrink: 0;
+    cursor: pointer;
 
     .square_box {
         height: 0;
@@ -28,7 +29,8 @@
 
     .project_pic {
         @include take-to-center;
-        width: 80%;
+        width: 90%;
+        border-radius: 10px;
     }
     
 }

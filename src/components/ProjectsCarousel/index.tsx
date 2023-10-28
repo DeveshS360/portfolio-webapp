@@ -17,12 +17,13 @@ export const ProjectsCarousel = (props: ProjectsCarouselProps) => {
         className={styles.container}
       >
         {itemList.map((item, idx) => {
-          const { projectImg, backgroundImg } = item
+          const { projectImg, backgroundImg, projectUrl } = item
           return (
             <ProjectCard
               key={idx}
               projectImg={projectImg}
               backgroundImg={backgroundImg}
+              projectUrl={projectUrl}
             />
           )
         })}

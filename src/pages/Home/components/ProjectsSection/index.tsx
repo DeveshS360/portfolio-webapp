@@ -5,31 +5,35 @@ import cx from 'classnames'
 import { useState } from 'react'
 import { ProjectsCarousel } from 'src/components/ProjectsCarousel'
 import { NavOptions } from 'src/components/ProjectsCarousel/types'
-import projectImg from 'assets/images/sportia.png'
+import sportsDasboardImg from 'assets/images/sports-dashboard.png'
+import portfolioWebAppImg from 'assets/images/portfolio-webapp.png'
+import ticTacToeImg from 'assets/images/tic-tac-toe.png'
 import projectBg1 from 'assets/images/dummy_project1.webp'
 import projectBg2 from 'assets/images/dummy_project2.webp'
 import projectBg3 from 'assets/images/dummy_project3.webp'
-import projectBg4 from 'assets/images/dummy_project4.webp'
+import { PROJECT_URLS } from 'src/constants/projects'
 
 export const ProjectSection = () => {
   const [activeItem, setActiveItem] = useState(0)
 
+  const PROJECT_URL1 = 'https://sports-dashboard-desmache.netlify.app/'
+  const PROJECT_URL2 = 'https://portfolio-desmache.netlify.app/'
+  const PROJECT_URL3 = 'https://portfolio-desmache.netlify.app/'
   const items = [
     {
-      projectImg,
+      projectImg: sportsDasboardImg,
       backgroundImg: projectBg1,
+      projectUrl: PROJECT_URLS.sportsDashboard,
     },
     {
-      projectImg,
+      projectImg: portfolioWebAppImg,
       backgroundImg: projectBg2,
+      projectUrl: PROJECT_URLS.portfolioWebApp,
     },
     {
-      projectImg,
+      projectImg: ticTacToeImg,
       backgroundImg: projectBg3,
-    },
-    {
-      projectImg,
-      backgroundImg: projectBg4,
+      projectUrl: PROJECT_URLS.ticTacToe,
     },
   ]
 
