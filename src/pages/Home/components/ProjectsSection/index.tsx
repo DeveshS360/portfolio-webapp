@@ -24,16 +24,19 @@ export const ProjectSection = () => {
       projectImg: sportsDasboardImg,
       backgroundImg: projectBg1,
       projectUrl: PROJECT_URLS.sportsDashboard,
-    },
-    {
-      projectImg: portfolioWebAppImg,
-      backgroundImg: projectBg2,
-      projectUrl: PROJECT_URLS.portfolioWebApp,
+      title: 'Sports Dashboard',
     },
     {
       projectImg: ticTacToeImg,
       backgroundImg: projectBg3,
       projectUrl: PROJECT_URLS.ticTacToe,
+      title: 'Tic Tac Toe Game',
+    },
+    {
+      projectImg: portfolioWebAppImg,
+      backgroundImg: projectBg2,
+      projectUrl: PROJECT_URLS.portfolioWebApp,
+      title: 'Portfolio Desmache',
     },
   ]
 

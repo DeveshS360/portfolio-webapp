@@ -10,20 +10,21 @@ export const ProjectsCarousel = (props: ProjectsCarouselProps) => {
       <div
         style={{
           transform: `translateX(-${activeItem * 50}%) translateX(-${
-            activeItem * 15
+            activeItem * 25
           }px)`,
           transition: 'all 1s ease-out',
         }}
         className={styles.container}
       >
         {itemList.map((item, idx) => {
-          const { projectImg, backgroundImg, projectUrl } = item
+          const { projectImg, backgroundImg, projectUrl, title } = item
           return (
             <ProjectCard
               key={idx}
               projectImg={projectImg}
               backgroundImg={backgroundImg}
               projectUrl={projectUrl}
+              title={title}
             />
           )
         })}
