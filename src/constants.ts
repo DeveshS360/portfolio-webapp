@@ -4,7 +4,7 @@ import serviceIcon2 from 'assets/images/service-icon-2.webp'
 import serviceIcon3 from 'assets/images/service-icon-3.webp'
 
 export const WORK_SAMPLE_VIDEO_SOURCE =
-  'https://drive.google.com/file/d/1jcPgKYVKh9NcsFZEdtdRD67mbUBvk7RB/preview'
+  'https://drive.google.com/file/d/1PzZodqNgD3aLLYN5eP0HywZjxzE40tXu/preview'
 
 export const LINKEDIN_URL = 'https://linkedin.com/in/devesh-sharma-992661180'
 export const GITHUB_URL = 'https://github.com/DeveshS360'
