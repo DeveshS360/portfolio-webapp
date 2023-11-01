@@ -47,6 +47,13 @@ export const ProjectSection = () => {
       setActiveItem((prev) => prev + 1)
   }
 
+  const checkIfDisabled = (action: NavOptions) => {
+    if (action === NavOptions.prev && activeItem === 0) return true
+    if (action === NavOptions.next && activeItem === items.length - 2)
+      return true
+    return false
+  }
+
   return (
     <div className={cx(layoutStyles.client_services, styles.project_section)}>
       <div className={layoutStyles.container}>
@@ -63,11 +70,18 @@ export const ProjectSection = () => {
           <div className={styles.nav_btn_container}>
             <button
               onClick={() => handleNavigation(NavOptions.prev)}
-              className={cx(roundBtnStyles.social, styles.nav_cta, styles.left)}
+              className={cx(
+                roundBtnStyles.social,
+                styles.nav_cta,
+                styles.left,
+                { [styles.disabled]: checkIfDisabled(NavOptions.prev) }
+              )}
             />
             <button
               onClick={() => handleNavigation(NavOptions.next)}
-              className={cx(roundBtnStyles.social, styles.nav_cta)}
+              className={cx(roundBtnStyles.social, styles.nav_cta, {
+                [styles.disabled]: checkIfDisabled(NavOptions.next),
+              })}
             />
           </div>
         </div>
