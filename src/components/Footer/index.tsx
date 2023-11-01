@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className={styles.text}>
           <span className={styles.secondary}>Made with lots of</span>{' '}
           <HeartFilled style={iconStyle} />{' '}
-          <span className={styles.secondary}>&</span> <span>{'<React />'}</span>
+          <span className={styles.secondary}>&</span> <span>{'<React />'}</span>{' '}
           <span className={styles.secondary}>by</span> Devesh Sharma
         </div>
         <LogoSection />
