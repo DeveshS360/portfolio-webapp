@@ -32,6 +32,11 @@
                     transform: rotate(180deg);
                 }
 
+                &.disabled {
+                    cursor: not-allowed;
+                    opacity: 0.5;
+                }
+
             }
         }
 
