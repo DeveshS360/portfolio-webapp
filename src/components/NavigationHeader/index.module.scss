@@ -1,22 +1,8 @@
 @import 'src/styles/mixins.scss';
 
 .navigation_header {
-    width: var(--big-desktop-content-width);
-
-    @include for-small-desktop {
-        width: var(--small-desktop-content-width);
-    }
-
-    @include for-medium-desktop {
-        width: var(--medium-desktop-content-width);
-    }
-
-    background: inherit;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 0;
+    
+    @include nav-footer;
 
     &.scroll {
         position:fixed;
@@ -37,18 +23,6 @@
 
         animation: scroll-animate 0.5s linear ;
         
-    }
-
-    .logo_section {
-        display: flex;
-        align-items: center;
-        gap: 0px 15px;
-        color: var(--text-color-primary);
-        font-family: 'Cormorant-Semibold';
-        font-size: 36px;
-        margin-top:  -3px;
-        position: relative;
-        z-index: var(--introduction_z_index);
     }
 
     .container {

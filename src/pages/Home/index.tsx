@@ -1,3 +1,4 @@
+import { Footer } from 'src/components/Footer'
 import { ClientServices } from './components/ClientServices'
 import { Introduction } from './components/Introduction'
 import { MetricsSection } from './components/MetricsSection'
@@ -12,6 +13,7 @@ export const Home = () => {
       <SpecialSkills />
       <MetricsSection />
       <ProjectSection />
+      <Footer />
     </>
   )
 }

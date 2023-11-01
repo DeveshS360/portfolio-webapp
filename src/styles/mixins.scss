@@ -48,3 +48,22 @@
         @content ;
     }
 }
+
+@mixin nav-footer {
+    width: var(--big-desktop-content-width);
+
+    @include for-small-desktop {
+        width: var(--small-desktop-content-width);
+    }
+
+    @include for-medium-desktop {
+        width: var(--medium-desktop-content-width);
+    }
+
+    background: inherit;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
