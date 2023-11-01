@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 import { MetricProps } from './types'
 import { convertToDecimal } from 'src/utils/number'
-import { checkInViewPort, useInViewPort } from 'src/utils/viewport'
+import { checkInViewPort, useWindowScroll } from 'src/utils/viewport'
 
 export const Metric = (props: MetricProps) => {
   const { icon, text, count, countSuffix, isWholeNumber = false } = props
@@ -33,7 +33,7 @@ export const Metric = (props: MetricProps) => {
     }
   }
 
-  useInViewPort(handleScroll)
+  useWindowScroll(handleScroll)
 
   const increaseNumberToCount = () => {
     if (currCount >= count) {

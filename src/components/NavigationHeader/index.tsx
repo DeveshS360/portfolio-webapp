@@ -1,9 +1,9 @@
 import styles from './index.module.scss'
-import navLogo from 'assets/images/nav-logo.svg'
 import cursiveBg from 'assets/images/cursive.png'
 import { Nav_Items } from './constants'
 import { useEffect, useRef } from 'react'
 import cx from 'classnames'
+import { LogoSection } from '../LogoSection'
 
 export const NavigationHeader = () => {
   const navRef = useRef<HTMLElement>(null)
@@ -35,10 +35,7 @@ export const NavigationHeader = () => {
         className={cx(styles.place_holder_nav, styles.hidden)}
       />
       <nav ref={navRef} className={styles.navigation_header}>
-        <div className={styles.logo_section}>
-          <img width={55} src={navLogo} alt="nav-logo" />
-          <span>Desmache</span>
-        </div>
+        <LogoSection />
         <div className={styles.container}>
           {Nav_Items.map((item) => (
             <span key={item.name}>

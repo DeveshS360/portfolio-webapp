@@ -1,0 +1,20 @@
+@import 'src/styles/mixins.scss';
+
+.footer {
+    background: var(--bg-color-primary);
+    border-top: 1px solid var(--gray-border-color-secondary);
+
+    .content {
+        @include nav-footer;
+        padding: 20px 0;
+
+        .text {
+            color: var(--text-color-primary);
+            font-family: 'Poppins-Regular';
+
+            .secondary {
+                color: var(--text-color-secondary);
+            }
+        }        
+    }
+}

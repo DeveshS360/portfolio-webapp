@@ -1,0 +1,30 @@
+@import 'src/styles/mixins.scss';
+
+.scroll_top_btn {
+    outline: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-border-color-secondary);
+    background: var(--bg-color-primary);
+    box-shadow:  var(--floating_btn_box_shadow);
+    transform: scale(0);
+    visibility: hidden;
+    transition: all 0.5s ease-in;
+    z-index: var(--floating_btn_z_index);
+    cursor: pointer;
+    
+    @include flex-center;
+    
+
+
+    &.visible {
+        visibility: visible;
+        transform: scale(1) translate(-30px, -30px);
+        transition: all 0.5s ease-in;
+
+    }
+}

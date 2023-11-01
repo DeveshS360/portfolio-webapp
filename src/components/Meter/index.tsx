@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { MeterProps } from './types'
 import styles from './index.module.scss'
-import { checkInViewPort, useInViewPort } from 'src/utils/viewport'
+import { checkInViewPort, useWindowScroll } from 'src/utils/viewport'
 
 export const Meter = (props: MeterProps) => {
   const { field, percentage } = props
@@ -20,7 +20,7 @@ export const Meter = (props: MeterProps) => {
     }
   }
 
-  useInViewPort(handleScroll)
+  useWindowScroll(handleScroll)
 
   const percentStyle = {
     fontFamily: 'Poppins-Regular',
