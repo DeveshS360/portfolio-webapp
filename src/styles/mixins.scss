@@ -67,3 +67,11 @@
     justify-content: space-between;
     padding: 30px 0;
 }
+
+@mixin gradient-two-colors ($breakPoint, $firstColor, $secondColor) {
+    
+    $breakPointPercentage : percentage($breakPoint / 100);
+
+    background: linear-gradient(to right,  $firstColor 0 $breakPointPercentage, $secondColor $breakPointPercentage 100%);
+
+}
