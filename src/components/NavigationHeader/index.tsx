@@ -1,9 +1,9 @@
 import styles from './index.module.scss'
-import cursiveBg from 'assets/images/cursive.png'
 import { Nav_Items } from './constants'
 import { useEffect, useRef } from 'react'
 import cx from 'classnames'
 import { LogoSection } from '../LogoSection'
+import { NavItem } from '../NavItem'
 
 export const NavigationHeader = () => {
   const navRef = useRef<HTMLElement>(null)
@@ -38,14 +38,7 @@ export const NavigationHeader = () => {
         <LogoSection />
         <div className={styles.container}>
           {Nav_Items.map((item) => (
-            <span key={item.name}>
-              {item.label}{' '}
-              <img
-                className={styles.cursive}
-                src={cursiveBg}
-                alt="cursive-bg"
-              />
-            </span>
+            <NavItem key={item.name} {...item}/>
           ))}
         </div>
         <button className={styles.cta}>Hire Me </button>
