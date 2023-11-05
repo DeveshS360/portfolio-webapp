@@ -9,13 +9,13 @@ $hover-animation-steps: 2;
     box-sizing: border-box;
     width: 300px;
     padding: 0;
-    top: 50px;
+    top: 60px;
     left: 0;
     background: var(--bg-color-secondary);
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
     visibility: hidden;
     z-index: var(--nav_dropdown_z_index);
 

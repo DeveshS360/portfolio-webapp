@@ -4,40 +4,20 @@ export const Nav_Items: NavItemProps[] = [
   {
     name: 'home',
     label: 'Home',
-    dropdownItems: [
-      {
-        key: 'first',
-        label: 'First'
-      },
-      {
-        key: 'second',
-        label: 'Second',
-      },
-      {
-        key: 'third',
-        label: 'Third'
-      },
-      {
-        key: 'fourth',
-        label: 'Fourth',
-      },
-      {
-        key: 'fifth',
-        label: 'Fifth',
-      },
-    ]
-  },
-  {
-    name: 'service',
-    label: 'Service',
-  },
-  {
-    name: 'blog',
-    label: 'Blog',
   },
   {
     name: 'pages',
     label: 'Pages',
+    dropdownItems: [
+      {
+        key: 'about_me',
+        label: 'About Me'
+      },
+      {
+        key: 'faq',
+        label: 'FAQs',
+      },
+    ]
   },
   {
     name: 'contact',
