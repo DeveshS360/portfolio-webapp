@@ -1,77 +1,75 @@
 @mixin take-to-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
 
 @mixin flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@mixin put-on-circle ($count, $radius, $angle, $initialRotation) {
+@mixin put-on-circle($count, $radius, $angle, $initialRotation) {
+  $rot: $initialRotation;
 
+  @for $i from 1 through $count {
+    > :nth-of-type(#{$i}) {
+      @include take-to-center();
+      transform: translate(-50%, -50%)
+        rotate($rot * 1deg)
+        translateX($radius)
+        rotate($rot * -1deg);
+    }
 
-    $rot: $initialRotation;
-
-    @for $i from 1 through $count {
-        > :nth-of-type(#{$i}) {
-          @include take-to-center();
-          transform: 
-            translate(-50%, -50%)
-            rotate($rot * 1deg) 
-            translateX($radius) 
-            rotate($rot * -1deg);
-        }
-  
-        $rot: $rot + $angle;
-      }
+    $rot: $rot + $angle;
+  }
 }
 
 @mixin for-small-desktop {
-    @media screen and (min-width: 1000px) and (max-width: 1299px){
-        @content ;
-    }
+  @media screen and (min-width: 1000px) and (max-width: 1299px) {
+    @content;
+  }
 }
 
 @mixin for-medium-desktop {
-    @media screen and (min-width: 1300px) and (max-width: 1599px){
-        @content ;
-    }
+  @media screen and (min-width: 1300px) and (max-width: 1599px) {
+    @content;
+  }
 }
 
 @mixin for-large-desktop {
-    @media screen and (min-width: 1600px) {
-        @content ;
-    }
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
 }
 
 @mixin nav-footer {
-    width: var(--big-desktop-content-width);
+  width: var(--big-desktop-content-width);
 
-    @include for-small-desktop {
-        width: var(--small-desktop-content-width);
-    }
+  @include for-small-desktop {
+    width: var(--small-desktop-content-width);
+  }
 
-    @include for-medium-desktop {
-        width: var(--medium-desktop-content-width);
-    }
+  @include for-medium-desktop {
+    width: var(--medium-desktop-content-width);
+  }
 
-    background: inherit;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 0;
+  background: inherit;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
 }
 
-@mixin gradient-two-colors ($breakPoint, $firstColor, $secondColor) {
-    
-    $breakPointPercentage : percentage($breakPoint / 100);
+@mixin gradient-two-colors($breakPoint, $firstColor, $secondColor) {
+  $breakPointPercentage: percentage(calc($breakPoint / 100));
 
-    background: linear-gradient(to right,  $firstColor 0 $breakPointPercentage, $secondColor $breakPointPercentage 100%);
-
+  background: linear-gradient(
+    to right,
+    $firstColor 0 $breakPointPercentage,
+    $secondColor $breakPointPercentage 100%
+  );
 }
