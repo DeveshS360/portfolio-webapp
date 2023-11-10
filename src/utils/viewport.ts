@@ -23,7 +23,7 @@ export const checkInViewPort = (ele: HTMLElement) => {
   return false
 }
 
-export const scrollOnRouteChange = () => {
+export const scrollToTop = () => {
   window.scroll({
     top: 0,
     behavior: 'smooth',

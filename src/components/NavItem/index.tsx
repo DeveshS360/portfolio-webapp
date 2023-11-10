@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 import { NavItemProps } from './types'
 import cursiveBg from 'assets/images/cursive.png'
 import { useNavigate } from 'react-router-dom'
-import { scrollOnRouteChange } from 'src/utils/viewport'
+import { scrollToTop } from 'src/utils/viewport'
 
 export const NavItem = (props: NavItemProps) => {
   const [isDropDownVisible, setIsDropdownVisible] = useState(false)
@@ -19,7 +19,7 @@ export const NavItem = (props: NavItemProps) => {
   const handleNavigation = () => {
     if (route && !dropdownItems?.length) {
       navigate(route)
-      scrollOnRouteChange()
+      scrollToTop()
     }
   }
   return (
