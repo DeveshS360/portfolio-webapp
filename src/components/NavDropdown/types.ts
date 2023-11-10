@@ -1,9 +1,10 @@
 export interface DropdownItem {
-    key: string;
-    label: string;
+  key: string
+  label: string
+  route?: string
 }
 
-export interface NavDropdownProps  {
-    items: DropdownItem[]
-    visible: boolean;
+export interface NavDropdownProps {
+  items: DropdownItem[]
+  visible: boolean
 }

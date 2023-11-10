@@ -1,0 +1,46 @@
+@import 'src/styles/mixins.scss';
+
+.introduction {
+  background: var(--bg-color-secondary);
+
+  .info {
+    @include nav-footer;
+  }
+
+  .media_section {
+    flex-shrink: 0;
+    background: var(--bg-color-primary);
+    padding: 100px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0px;
+    margin: 100px 0;
+  }
+
+  .text_section {
+    flex-shrink: 0;
+    max-width: calc(50% - 25px);
+    .heading {
+      font-size: 70px;
+      color: var(--text-color-primary);
+      font-family: 'Cormorant-Semibold';
+    }
+
+    .sub_heading {
+      font-size: 40px;
+      color: var(--text-color-secondary);
+      font-family: 'Cormorant-Semibold';
+      margin-bottom: 36px;
+      line-height: 1.5;
+
+      @include for-small-desktop {
+        line-height: 1.2;
+      }
+    }
+
+    .description {
+      font-family: 'Poppins-Regular';
+      color: var(--text-color-secondary);
+    }
+  }
+}

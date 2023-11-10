@@ -1,7 +1,8 @@
-import { DropdownItem } from "../NavDropdown/types";
+import { DropdownItem } from '../NavDropdown/types'
 
 export interface NavItemProps {
-    dropdownItems?: DropdownItem[];
-    label: string;
-    name?: string;
+  dropdownItems?: DropdownItem[]
+  label: string
+  name?: string
+  route?: string
 }
