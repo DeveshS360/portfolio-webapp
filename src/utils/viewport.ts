@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 export const useWindowScroll = (scrollFn: () => void) => {
   useEffect(() => {
@@ -7,7 +7,6 @@ export const useWindowScroll = (scrollFn: () => void) => {
     return () => window.addEventListener('scroll', scrollFn)
   }, [])
 }
-
 
 export const checkInViewPort = (ele: HTMLElement) => {
   const boundingRect = ele.getBoundingClientRect()
@@ -22,4 +21,11 @@ export const checkInViewPort = (ele: HTMLElement) => {
   )
     return true
   return false
+}
+
+export const scrollOnRouteChange = () => {
+  window.scroll({
+    top: 0,
+    behavior: 'smooth',
+  })
 }

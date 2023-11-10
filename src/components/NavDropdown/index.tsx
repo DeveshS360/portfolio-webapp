@@ -2,12 +2,16 @@ import { NavDropdownProps } from './types'
 import styles from './index.module.scss'
 import cx from 'classnames'
 import { useNavigate } from 'react-router-dom'
+import { scrollOnRouteChange } from 'src/utils/viewport'
 
 export const NavDropdown = (props: NavDropdownProps) => {
   const navigate = useNavigate()
 
   const handleNavigation = (route: string) => {
-    if (route) navigate(route)
+    if (route) {
+      navigate(route)
+      scrollOnRouteChange()
+    }
   }
   const { items, visible } = props
   return (
