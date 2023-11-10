@@ -11,7 +11,7 @@ import {
 export const MetricsSection = () => {
   const iconStyle = { fontSize: 25, color: 'var(--text-color-primary)' }
   return (
-    <div className={cx(layoutStyles.client_services, styles.metrics)}>
+    <section className={cx(layoutStyles.client_services, styles.metrics)}>
       <div className={cx(layoutStyles.container, styles.content)}>
         <Metric
           icon={<FolderOpenOutlined style={iconStyle} />}
@@ -32,6 +32,6 @@ export const MetricsSection = () => {
           text="Years of experience"
         />
       </div>
-    </div>
+    </section>
   )
 }

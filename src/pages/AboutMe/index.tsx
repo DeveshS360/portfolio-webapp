@@ -1,6 +1,7 @@
 import { PageHeader } from 'src/components/PageHeader'
 import { AppRoutes } from 'src/constants/routes'
 import { Introduction } from './components/Introduction'
+import { Career } from './components/Career'
 
 export const AboutMe = () => {
   return (
@@ -12,6 +13,7 @@ export const AboutMe = () => {
         currPage="About"
       />
       <Introduction />
+      <Career />
     </>
   )
 }

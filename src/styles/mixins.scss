@@ -11,6 +11,12 @@
   justify-content: center;
 }
 
+@mixin flex-align-justify-spacebw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @mixin put-on-circle($count, $radius, $angle, $initialRotation) {
   $rot: $initialRotation;
 

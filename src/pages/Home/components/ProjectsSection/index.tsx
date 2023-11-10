@@ -16,9 +16,6 @@ import { PROJECT_URLS } from 'src/constants/projects'
 export const ProjectSection = () => {
   const [activeItem, setActiveItem] = useState(0)
 
-  const PROJECT_URL1 = 'https://sports-dashboard-desmache.netlify.app/'
-  const PROJECT_URL2 = 'https://portfolio-desmache.netlify.app/'
-  const PROJECT_URL3 = 'https://portfolio-desmache.netlify.app/'
   const items = [
     {
       projectImg: sportsDasboardImg,
@@ -55,7 +52,9 @@ export const ProjectSection = () => {
   }
 
   return (
-    <div className={cx(layoutStyles.client_services, styles.project_section)}>
+    <section
+      className={cx(layoutStyles.client_services, styles.project_section)}
+    >
       <div className={layoutStyles.container}>
         <div className={styles.navigation}>
           <div>
@@ -87,6 +86,6 @@ export const ProjectSection = () => {
         </div>
         <ProjectsCarousel activeItem={activeItem} itemList={items} />
       </div>
-    </div>
+    </section>
   )
 }

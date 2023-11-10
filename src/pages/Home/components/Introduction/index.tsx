@@ -8,7 +8,7 @@ import { IS_SMALL_DESKTOP } from 'src/constants/screen'
 
 export const Introduction = () => {
   return (
-    <div className={styles.introduction}>
+    <section className={styles.introduction}>
       <NavigationHeader />
       <ConcentricCircles
         className={styles.top_left_circle}
@@ -40,6 +40,6 @@ export const Introduction = () => {
         circularGap={IS_SMALL_DESKTOP ? 55 : 65}
         size={440}
       />
-    </div>
+    </section>
   )
 }

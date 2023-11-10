@@ -6,8 +6,8 @@ import { DownloadResume } from 'src/components/DownloadResume'
 
 export const Introduction = () => {
   return (
-    <div className={cx(layoutStyles.introduction, styles.introduction)}>
-      <div className={cx(styles.info, styles.main)}>
+    <section className={cx(layoutStyles.introduction, styles.introduction)}>
+      <div className={cx(styles.info)}>
         <div className={styles.media_section}>
           <WorkSampleVideo isDisplayTitle={false} />
           <DownloadResume />
@@ -26,6 +26,6 @@ export const Introduction = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -6,7 +6,9 @@ import { DownloadResume } from 'src/components/DownloadResume'
 
 export const SpecialSkills = () => {
   return (
-    <div className={cx(styles.special_skills, layoutStyles.client_services)}>
+    <section
+      className={cx(styles.special_skills, layoutStyles.client_services)}
+    >
       <div className={cx(layoutStyles.container, styles.content_wrapper)}>
         <div className={styles.left}>
           <div className={styles.text_section}>
@@ -26,6 +28,6 @@ export const SpecialSkills = () => {
           <Meter field="Typescript" percentage={75} />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
