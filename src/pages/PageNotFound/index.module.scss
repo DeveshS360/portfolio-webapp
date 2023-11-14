@@ -10,9 +10,8 @@
     @include responsive-width;
 
     padding: 100px 0;
-    padding: 0;
 
-    .text {
+    .info {
       flex: 1;
       flex-shrink: 0;
       .title {
@@ -30,6 +29,25 @@
       .description {
         color: var(--text-color-secondary);
         font-family: 'Poppins-Regular';
+      }
+
+      .cta {
+        font-size: 14px;
+        margin-top: 50px;
+        padding: 24px 40px;
+
+        &::after {
+          content: '';
+        }
+
+        &::before {
+          content: '\ea7b';
+          font-family: 'Ico';
+        }
+
+        &:hover {
+          background: #2e303d;
+        }
       }
     }
 
