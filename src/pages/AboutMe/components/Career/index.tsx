@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import cx from 'classnames'
 import { CareerTypes } from './types'
 import { useState } from 'react'
-import { EXPERTISE_DETAILS } from './constants'
+import { EXPERTISE_DETAILS } from '../../../../constants/career'
 
 export const Career = () => {
   const [expertise, setExpertise] = useState(CareerTypes.experience)

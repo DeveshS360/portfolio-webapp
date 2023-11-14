@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './index.module.scss'
 import { EmbeddedVideo } from '../EmbeddedVideo'
-import { WORK_SAMPLE_VIDEO_SOURCE } from 'src/constants'
+import { WORK_SAMPLE_VIDEO_SOURCE } from 'src/constants/common'
 import { WorkSampleVideoProps } from './types'
 
 export const WorkSampleVideo = (props: WorkSampleVideoProps) => {

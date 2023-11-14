@@ -1,4 +1,4 @@
-import { NavItemProps } from '../NavItem/types'
+import { NavItemProps } from '../components/NavItem/types'
 
 export const Nav_Items: NavItemProps[] = [
   {
@@ -20,6 +20,11 @@ export const Nav_Items: NavItemProps[] = [
         label: 'FAQs',
       },
       {
+        key: 'not_found',
+        label: '404 Page',
+        route: '/404',
+      },
+      {
         key: 'dummy_li1',
         label: 'Dummy Item 1',
       },
@@ -30,10 +35,6 @@ export const Nav_Items: NavItemProps[] = [
       {
         key: 'dummy_li3',
         label: 'Dummy Item 3',
-      },
-      {
-        key: 'dummy_li4',
-        label: 'Dummy Item 4',
       },
     ],
   },

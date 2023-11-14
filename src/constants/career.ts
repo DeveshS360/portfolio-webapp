@@ -1,4 +1,7 @@
-import { Expertise, ExpertiseDetails } from './types'
+import {
+  Expertise,
+  ExpertiseDetails,
+} from '../pages/AboutMe/components/Career/types'
 
 const EXPERIENCE_DETAILS: Expertise[] = [
   {
