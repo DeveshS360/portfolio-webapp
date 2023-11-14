@@ -41,7 +41,7 @@ export const NavigationHeader = () => {
             <NavItem key={item.name} {...item} />
           ))}
         </div>
-        <button className={styles.cta}>Hire Me </button>
+        <a className={styles.cta}>Hire Me </a>
       </nav>
     </>
   )
