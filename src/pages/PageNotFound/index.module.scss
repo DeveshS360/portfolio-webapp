@@ -1,0 +1,18 @@
+@import 'src/styles/mixins.scss';
+
+.page_not_found {
+  width: 100%;
+  background: var(--bg-color-secondary);
+
+  .content {
+    @include flex-align-center;
+    @include responsive-width;
+
+    height: 500px;
+    background: orangered;
+    padding: 0;
+
+    .text {
+    }
+  }
+}

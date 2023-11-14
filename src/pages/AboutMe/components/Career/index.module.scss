@@ -3,7 +3,8 @@
 .career {
   padding-bottom: 200px;
   .toggle_exptertise {
-    @include nav-footer;
+    @include flex-align-center;
+    @include responsive-width;
     margin: 100px auto;
 
     .btn_container {
@@ -38,7 +39,8 @@
   .chronology_container {
     animation: content-toggle 1s linear;
     .chronology {
-      @include nav-footer;
+      @include flex-align-center;
+      @include responsive-width;
       padding: 0;
       align-items: unset;
 

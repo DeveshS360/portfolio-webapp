@@ -1,5 +1,5 @@
 import styles from './index.module.scss'
-import { Nav_Items } from './constants'
+import { Nav_Items } from '../../constants/navigation'
 import { useEffect, useRef } from 'react'
 import cx from 'classnames'
 import { LogoSection } from '../LogoSection'
@@ -38,7 +38,7 @@ export const NavigationHeader = () => {
         <LogoSection />
         <div className={styles.container}>
           {Nav_Items.map((item) => (
-            <NavItem key={item.name} {...item}/>
+            <NavItem key={item.name} {...item} />
           ))}
         </div>
         <button className={styles.cta}>Hire Me </button>
