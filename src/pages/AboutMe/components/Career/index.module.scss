@@ -1,9 +1,9 @@
 @import 'src/styles/mixins.scss';
 
 .career {
-  .content {
+  padding-bottom: 200px;
+  .toggle_exptertise {
     @include nav-footer;
-
     margin: 100px auto;
 
     .btn_container {
@@ -30,6 +30,65 @@
           background: var(--bg-color-secondary);
           border: 1px solid var(--bg-color-primary);
           transition: all 0.3s linear;
+        }
+      }
+    }
+  }
+
+  .chronology_container {
+    .chronology {
+      @include nav-footer;
+      padding: 0;
+      align-items: unset;
+
+      .timeline {
+        flex: 1.5;
+        padding: 40px 0;
+        border: 1px solid var(--gray-border-color-secondary);
+        border-bottom: unset;
+        border-top: unset;
+        min-width: 250px;
+
+        .duration {
+          width: 100%;
+          text-align: end;
+          padding: 18px 24px;
+          font-family: 'Poppins-Regular';
+          border-right: 2px solid var(--text-color-primary);
+          color: var(--text-color-secondary);
+          font-size: 16px;
+          box-sizing: border-box;
+        }
+      }
+
+      &:first-child {
+        .timeline {
+          border-top: 1px solid var(--gray-border-color-secondary);
+          padding-top: 80px;
+        }
+      }
+
+      &:last-child {
+        .timeline {
+          border-bottom: 1px solid var(--gray-border-color-secondary);
+          padding-bottom: 80px;
+        }
+      }
+
+      .content {
+        flex: 3.5;
+        padding-left: 100px;
+
+        .title {
+          font-family: 'Cormorant-Semibold';
+          color: var(--text-color-primary);
+          font-size: 40px;
+        }
+
+        .subtitle,
+        .description {
+          font-family: 'Poppins-Regular';
+          color: var(--text-color-secondary);
         }
       }
     }
