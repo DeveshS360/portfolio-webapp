@@ -6,13 +6,35 @@
 
   .content {
     @include flex-align-center;
+    gap: 0 100px;
     @include responsive-width;
 
-    height: 500px;
-    background: orangered;
+    padding: 100px 0;
     padding: 0;
 
     .text {
+      flex: 1;
+      flex-shrink: 0;
+      .title {
+        color: var(--text-color-primary);
+        font-family: 'Cormorant-Semibold';
+        font-size: 60px;
+      }
+
+      .subtitle {
+        color: var(--text-color-primary);
+        font-family: 'Cormorant-Regular';
+        font-size: 30px;
+      }
+
+      .description {
+        color: var(--text-color-secondary);
+        font-family: 'Poppins-Regular';
+      }
+    }
+
+    .astronaut {
+      flex: 1;
     }
   }
 }
