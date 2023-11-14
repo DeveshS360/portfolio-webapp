@@ -5,7 +5,7 @@ import { CAROUSEL_DATA } from 'src/constants'
 
 export const ClientServices = () => {
   return (
-    <div className={styles.client_services}>
+    <section className={styles.client_services}>
       <div className={styles.container}>
         <div>
           <span className={cx(styles.title, styles.pipe)}>||</span>
@@ -18,6 +18,6 @@ export const ClientServices = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }

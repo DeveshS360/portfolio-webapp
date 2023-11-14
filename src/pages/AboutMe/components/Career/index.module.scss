@@ -1,0 +1,107 @@
+@import 'src/styles/mixins.scss';
+
+.career {
+  padding-bottom: 200px;
+  .toggle_exptertise {
+    @include nav-footer;
+    margin: 100px auto;
+
+    .btn_container {
+      @include flex-align-justify-spacebw;
+      width: 100%;
+      gap: 0px 30px;
+
+      .expertise {
+        outline: none;
+        border: 1px solid var(--gray-border-color-secondary);
+        background: var(--bg-color-primary);
+        width: 100%;
+        padding: 18px;
+        text-align: center;
+        font-family: 'Cormorant-Regular';
+        font-size: 4vw;
+        color: var(--text-color-primary);
+        cursor: pointer;
+        transition:
+          border 0.3s,
+          background 0.3s linear;
+
+        &.selected {
+          background: var(--bg-color-secondary);
+          border: 1px solid var(--bg-color-primary);
+          transition: all 0.3s linear;
+        }
+      }
+    }
+  }
+
+  .chronology_container {
+    animation: content-toggle 1s linear;
+    .chronology {
+      @include nav-footer;
+      padding: 0;
+      align-items: unset;
+
+      .timeline {
+        flex: 1.5;
+        padding: 40px 0;
+        border: 1px solid var(--gray-border-color-secondary);
+        border-bottom: unset;
+        border-top: unset;
+        min-width: 250px;
+
+        .duration {
+          width: 100%;
+          text-align: end;
+          padding: 18px 24px;
+          font-family: 'Poppins-Regular';
+          border-right: 2px solid var(--text-color-primary);
+          color: var(--text-color-secondary);
+          font-size: 16px;
+          box-sizing: border-box;
+        }
+      }
+
+      &:first-child {
+        .timeline {
+          border-top: 1px solid var(--gray-border-color-secondary);
+          padding-top: 80px;
+        }
+      }
+
+      &:last-child {
+        .timeline {
+          border-bottom: 1px solid var(--gray-border-color-secondary);
+          padding-bottom: 80px;
+        }
+      }
+
+      .content {
+        flex: 3.5;
+        padding-left: 100px;
+
+        .title {
+          font-family: 'Cormorant-Semibold';
+          color: var(--text-color-primary);
+          font-size: 40px;
+        }
+
+        .subtitle,
+        .description {
+          font-family: 'Poppins-Regular';
+          color: var(--text-color-secondary);
+        }
+      }
+    }
+  }
+}
+
+@keyframes content-toggle {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

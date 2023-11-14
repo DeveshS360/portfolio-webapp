@@ -7,13 +7,12 @@ import { SocialSection } from 'src/components/SocialSection'
 import { IS_SMALL_DESKTOP } from 'src/constants/screen'
 
 export const Introduction = () => {
-
   return (
-    <div className={styles.introduction}>
+    <section className={styles.introduction}>
       <NavigationHeader />
       <ConcentricCircles
         className={styles.top_left_circle}
-        circularGap={IS_SMALL_DESKTOP ? 55 :  65}
+        circularGap={IS_SMALL_DESKTOP ? 55 : 65}
         size={440}
       />
       <div className={styles.main}>
@@ -37,10 +36,10 @@ export const Introduction = () => {
         <SocialSection />
       </div>
       <ConcentricCircles
-        className={styles.bottom_right_circle}
-        circularGap={IS_SMALL_DESKTOP ? 55 :  65}
+        className={styles.bottom_left_circle}
+        circularGap={IS_SMALL_DESKTOP ? 55 : 65}
         size={440}
       />
-    </div>
+    </section>
   )
 }

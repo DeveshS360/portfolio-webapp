@@ -2,9 +2,12 @@ import { useState } from 'react'
 import styles from './index.module.scss'
 import { EmbeddedVideo } from '../EmbeddedVideo'
 import { WORK_SAMPLE_VIDEO_SOURCE } from 'src/constants'
+import { WorkSampleVideoProps } from './types'
 
-export const WorkSampleVideo = () => {
+export const WorkSampleVideo = (props: WorkSampleVideoProps) => {
   const [showVideo, setShowVideo] = useState(false)
+
+  const { isDisplayTitle = true } = props
 
   return (
     <>
@@ -12,7 +15,9 @@ export const WorkSampleVideo = () => {
         <button className={styles.round_btn} onClick={() => setShowVideo(true)}>
           <span className={styles.icon}></span>
         </button>
-        <span className={styles.text}>Watch Work Sample Video</span>
+        {isDisplayTitle && (
+          <span className={styles.text}>Watch Work Sample Video</span>
+        )}
       </div>
       <EmbeddedVideo
         showVideo={showVideo}

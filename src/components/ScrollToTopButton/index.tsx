@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './index.module.scss'
 import cx from 'classnames'
-import { useWindowScroll } from 'src/utils/viewport'
+import { scrollToTop, useWindowScroll } from 'src/utils/viewport'
 import { UpOutlined } from '@ant-design/icons'
 
 export const ScrollToTopButton = () => {
@@ -12,13 +12,6 @@ export const ScrollToTopButton = () => {
     else if (!isVisible) setIsVisible(true)
   }
   useWindowScroll(handleScroll)
-
-  const scrollToTop = () => {
-    window.scroll({
-      top: 0,
-      behavior: 'smooth',
-    })
-  }
 
   const iconStyle = {
     fontSize: 18,
