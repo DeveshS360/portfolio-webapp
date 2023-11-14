@@ -13,18 +13,17 @@ import {
   GITHUB_URL,
   INSTA_URL,
   LINKEDIN_URL,
-} from 'src/constants'
+} from 'src/constants/common'
 import { IS_SMALL_DESKTOP } from 'src/constants/screen'
 
 export const SocialSection = () => {
-
   return (
     <aside className={styles.social_section}>
       <img className={styles.hero} src={heroImgUrl} alt="hero" />
       <ConcentricCircles
         className={styles.circles}
         circularGap={60}
-        size={IS_SMALL_DESKTOP ? 300 :  400}
+        size={IS_SMALL_DESKTOP ? 300 : 400}
         boldIdx={2}
       >
         <div className={styles.social_icons_container}>
