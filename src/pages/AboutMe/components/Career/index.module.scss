@@ -36,6 +36,7 @@
   }
 
   .chronology_container {
+    animation: content-toggle 1s linear;
     .chronology {
       @include nav-footer;
       padding: 0;
@@ -92,5 +93,15 @@
         }
       }
     }
+  }
+}
+
+@keyframes content-toggle {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

@@ -10,3 +10,8 @@ export interface Expertise {
   start: string
   end: string
 }
+
+export interface ExpertiseDetails {
+  education: Expertise[]
+  experience: Expertise[]
+}

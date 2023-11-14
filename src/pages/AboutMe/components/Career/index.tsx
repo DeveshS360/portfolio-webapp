@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import cx from 'classnames'
 import { CareerTypes } from './types'
 import { useState } from 'react'
-import { EXPERIENCE_DETAILS } from './constants'
+import { EXPERTISE_DETAILS } from './constants'
 
 export const Career = () => {
   const [expertise, setExpertise] = useState(CareerTypes.experience)
@@ -39,8 +39,8 @@ export const Career = () => {
           </button>
         </div>
       </div>
-      <div className={styles.chronology_container}>
-        {EXPERIENCE_DETAILS.map((entity) => {
+      <div key={expertise} className={styles.chronology_container}>
+        {EXPERTISE_DETAILS[expertise].map((entity) => {
           const { title, subtitle, start, end, description } = entity
           return (
             <div className={styles.chronology}>
