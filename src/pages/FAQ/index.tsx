@@ -9,8 +9,8 @@ export const FAQ = () => {
   return (
     <section className={styles.faq}>
       <PageHeader
-        title="FAQ"
-        currPage="FAQ"
+        title="FAQs"
+        currPage="FAQs"
         redirectionPage="Home"
         redirectionRoute={AppRoutes.home}
       />
