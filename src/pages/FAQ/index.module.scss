@@ -1,0 +1,15 @@
+@import 'src/styles/mixins.scss';
+
+.faq {
+  width: 100%;
+  background: var(--bg-color-secondary);
+
+  .content {
+    @include responsive-width;
+    padding: 100px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+  }
+}

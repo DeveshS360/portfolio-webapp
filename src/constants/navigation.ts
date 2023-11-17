@@ -18,6 +18,7 @@ export const Nav_Items: NavItemProps[] = [
       {
         key: 'faq',
         label: 'FAQs',
+        route: '/faq',
       },
       {
         key: 'not_found',
