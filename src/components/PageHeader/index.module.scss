@@ -5,20 +5,20 @@
     transform: translate(70%, 50%);
   }
   .content_wrapper {
-    padding: 100px;
+    padding: 40px 100px 100px;
 
     .content {
       margin: 0 auto;
       background: inherit;
       display: flex;
       align-items: center;
-      gap: 40px 0;
       flex-direction: column;
 
       .title {
         font-size: 75px;
         font-family: 'Cormorant-Regular';
         color: var(--text-color-primary);
+        margin-bottom: 30px;
       }
 
       .pages_capsule {
