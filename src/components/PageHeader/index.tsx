@@ -5,9 +5,15 @@ import layoutStyles from 'src/pages/Home/components/Introduction/index.module.sc
 import styles from './index.module.scss'
 import { PageHeaderProps } from './types'
 import cx from 'classnames'
+import { AppRoutes } from 'src/constants/routes'
 
 export const PageHeader = (props: PageHeaderProps) => {
-  const { title, redirectionPage, redirectionRoute, currPage } = props
+  const {
+    title,
+    redirectionPage = 'Home',
+    redirectionRoute = AppRoutes.home,
+    currPage,
+  } = props
 
   return (
     <div className={cx(layoutStyles.introduction, styles.page_header)}>

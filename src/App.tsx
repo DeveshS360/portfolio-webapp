@@ -5,6 +5,7 @@ import { AppRoutes } from './constants/routes'
 import { AboutMe } from './pages/AboutMe'
 import { PageNotFound } from './pages/PageNotFound'
 import { FAQ } from './pages/FAQ'
+import { ContactMe } from './pages/ContactMe'
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
         <Route path={`${AppRoutes.aboutMe}`} element={<AboutMe />} />
         <Route path={`${AppRoutes.faq}`} element={<FAQ />} />
         <Route path="/*" element={<PageNotFound />} />
+        <Route path="/contact" element={<ContactMe />} />
       </Routes>
       <ScrollToTopButton />
     </>

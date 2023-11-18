@@ -42,5 +42,6 @@ export const Nav_Items: NavItemProps[] = [
   {
     name: 'contact',
     label: 'Contact',
+    route: '/contact',
   },
 ]

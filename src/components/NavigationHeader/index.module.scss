@@ -1,95 +1,90 @@
 @import 'src/styles/mixins.scss';
 
 .navigation_header {
-    
-    @include nav-footer;
+  @include nav-footer;
 
-    &.scroll {
-        position:fixed;
-        top: 0;
-        z-index: var(--navbar_z_index);
-        width: 70%;
-        padding: 30px 15%;
+  &.scroll {
+    position: fixed;
+    top: 0;
+    z-index: var(--navbar_z_index);
+    width: 70%;
+    padding: 30px 15%;
 
-        @include for-small-desktop {
-            width: var(--small-desktop-content-width);
-            padding: 30px calc((100% - var(--small-desktop-content-width))/2);
-        }
-
-        @include for-medium-desktop {
-            width: var(--medium-desktop-content-width);
-            padding: 30px calc((100% - var(--medium-desktop-content-width))/2);
-        }
-
-        animation: scroll-animate 0.5s linear ;
-        
+    @include for-small-desktop {
+      width: var(--small-desktop-content-width);
+      padding: 30px calc((100% - var(--small-desktop-content-width)) / 2);
     }
 
-    .container {
-        display: flex;
-        align-items: center;
-        gap: 0px 60px;
-
-        @include for-small-desktop {
-            gap: 0px 30px;
-        }
-
-        cursor: pointer;
-
+    @include for-medium-desktop {
+      width: var(--medium-desktop-content-width);
+      padding: 30px calc((100% - var(--medium-desktop-content-width)) / 2);
     }
 
+    animation: scroll-animate 0.5s linear;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 0px 60px;
+
+    @include for-small-desktop {
+      gap: 0px 30px;
+    }
+
+    cursor: pointer;
+  }
 }
 
 @keyframes scroll-animate {
-    0% {
-        opacity: 0;
-        top: -100px;
-    }
+  0% {
+    opacity: 0;
+    top: -100px;
+  }
 
-    100% {
-        opacity: 1;
-        transform: scaleY(1);
-        top: 0
-    }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    top: 0;
+  }
 }
 
 .cta {
-    display: flex;
-    align-items: center;
-    gap: 0px 5px;
-    background: inherit;
-    border: 1px solid var(--gray-border-color-secondary);
-    border-radius: 32px;
-    padding: 18px 45px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0px 5px;
+  background: inherit;
+  border: 1px solid var(--gray-border-color-secondary);
+  border-radius: 32px;
+  padding: 18px 45px;
+  cursor: pointer;
+  z-index: var(--introduction_z_index);
 
-    color: var(--text-color-primary);
-    font-size: 18px;
-    font-family: 'Poppins-Regular';
+  color: var(--text-color-primary);
+  font-size: 18px;
+  font-family: 'Poppins-Regular';
+  transition: all 0.5s ease;
+
+  &::after {
+    content: '\ea7c';
+    font-family: 'Ico';
+    margin-left: 10px;
+  }
+
+  &:hover {
+    background: var(--bg-color-secondary);
+    border: 1px solid var(--bg-color-secondary);
     transition: all 0.5s ease;
-
-    &::after {
-        content: '\ea7c';
-        font-family: 'Ico';
-        margin-left: 10px;
-    }
-
-    &:hover {
-        background: var(--bg-color-secondary);
-        border: 1px solid var(--bg-color-secondary);
-        transition: all 0.5s ease;
-    }
-
+  }
 }
 
 .place_holder_nav {
-    width: 70%;
-    background: inherit;
-    margin: 0 auto;
-    height: 120px;
-    
+  width: 70%;
+  background: inherit;
+  margin: 0 auto;
+  height: 120px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
