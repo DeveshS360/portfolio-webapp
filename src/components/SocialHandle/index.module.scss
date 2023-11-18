@@ -1,17 +1,18 @@
 @import '../../styles/mixins.scss';
 
 .social {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--bg-color-primary);
-    border: 2px solid var(--text-color-primary);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--bg-color-primary);
+  border: 2px solid var(--text-color-primary);
+  transition: all 0.5s linear;
+  cursor: pointer;
+  @include flex-center;
+
+  &:hover {
+    background: var(--text-color-primary) !important;
     transition: all 0.5s linear;
-    cursor: pointer;
-    @include flex-center;
-        
-    &:hover {
-        background: var(--text-color-primary) !important;
-        transition: all 0.5s linear;
-    }
+    border: 2px solid var(--text-color-primary);
+  }
 }

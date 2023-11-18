@@ -40,10 +40,10 @@ export const Career = () => {
         </div>
       </div>
       <div key={expertise} className={styles.chronology_container}>
-        {EXPERTISE_DETAILS[expertise].map((entity) => {
+        {EXPERTISE_DETAILS[expertise].map((entity, idx) => {
           const { title, subtitle, start, end, description } = entity
           return (
-            <div className={styles.chronology}>
+            <div key={idx} className={styles.chronology}>
               <div className={styles.timeline}>
                 <h6 className={styles.duration}>
                   {start} - {end}

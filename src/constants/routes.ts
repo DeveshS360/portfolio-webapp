@@ -3,4 +3,5 @@ export enum AppRoutes {
   aboutMe = 'about-me',
   notFound = '/404',
   faq = '/faq',
+  contactMe = '/contact',
 }

@@ -9,12 +9,7 @@ import { AppRoutes } from 'src/constants/routes'
 export const PageNotFound = () => {
   return (
     <section className={styles.page_not_found}>
-      <PageHeader
-        title="Page Not Found"
-        redirectionPage="Home"
-        redirectionRoute={AppRoutes.notFound}
-        currPage="404"
-      />
+      <PageHeader title="Page Not Found" currPage="404" />
       <div className={styles.content}>
         <div className={styles.info}>
           <h1 className={styles.title}>Sorry!</h1>

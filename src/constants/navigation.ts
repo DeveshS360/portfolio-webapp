@@ -1,10 +1,11 @@
 import { NavItemProps } from '../components/NavItem/types'
+import { AppRoutes } from './routes'
 
 export const Nav_Items: NavItemProps[] = [
   {
     name: 'home',
     label: 'Home',
-    route: '/',
+    route: AppRoutes.home,
   },
   {
     name: 'pages',
@@ -13,17 +14,17 @@ export const Nav_Items: NavItemProps[] = [
       {
         key: 'about_me',
         label: 'About Me',
-        route: '/about-me',
+        route: AppRoutes.aboutMe,
       },
       {
         key: 'faq',
         label: 'FAQs',
-        route: '/faq',
+        route: AppRoutes.faq,
       },
       {
         key: 'not_found',
         label: '404 Page',
-        route: '/404',
+        route: AppRoutes.notFound,
       },
       {
         key: 'dummy_li1',
@@ -42,5 +43,6 @@ export const Nav_Items: NavItemProps[] = [
   {
     name: 'contact',
     label: 'Contact',
+    route: AppRoutes.contactMe,
   },
 ]

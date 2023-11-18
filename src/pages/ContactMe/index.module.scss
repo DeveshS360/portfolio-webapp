@@ -1,0 +1,59 @@
+@import 'src/styles/mixins.scss';
+
+.contact_me {
+  width: 100%;
+  background: var(--bg-color-secondary);
+
+  .content {
+    @include responsive-width;
+    padding: 100px 0;
+
+    .contact_ways {
+      margin: 80px 0;
+      padding: 80px 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px 0;
+      background: var(--bg-color-primary);
+
+      .card {
+        background: var(--bg-color-secondary);
+        padding: 30px;
+
+        * {
+          font-family: 'Poppins-Regular';
+        }
+
+        .title {
+          color: var(--text-color-primary);
+        }
+
+        .subtitle {
+          color: var(--text-color-secondary);
+        }
+      }
+    }
+
+    .follow_me {
+      width: 100%;
+      box-sizing: border-box;
+      background: var(--bg-color-primary);
+      padding: 60px 40px;
+
+      .heading {
+        color: var(--text-color-primary);
+        font-family: 'Cormorant-Semibold';
+        font-size: 50px;
+      }
+
+      .socials {
+        @include flex-align-center;
+        gap: 0 40px;
+
+        .link {
+          border: 2px solid var(--gray-border-color-secondary);
+        }
+      }
+    }
+  }
+}
