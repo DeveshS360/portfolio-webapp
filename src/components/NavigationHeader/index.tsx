@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import cx from 'classnames'
 import { LogoSection } from '../LogoSection'
 import { NavItem } from '../NavItem'
+import { AppRoutes } from 'src/constants/routes'
 
 export const NavigationHeader = () => {
   const navRef = useRef<HTMLElement>(null)
@@ -41,7 +42,9 @@ export const NavigationHeader = () => {
             <NavItem key={item.name} {...item} />
           ))}
         </div>
-        <a className={styles.cta}>Hire Me </a>
+        <a className={styles.cta} href={AppRoutes.contactMe}>
+          Hire Me{' '}
+        </a>
       </nav>
     </>
   )
