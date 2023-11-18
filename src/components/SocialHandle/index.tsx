@@ -1,9 +1,10 @@
 import styles from './index.module.scss'
 import { SocialHandleProps } from './types'
 import { useState } from 'react'
+import cx from 'classnames'
 
 export const SocialHandle = (props: SocialHandleProps) => {
-  const { Icon, redirectionUrl } = props
+  const { Icon, redirectionUrl, className } = props
 
   const hoverColor = 'var(--bg-color-primary)'
   const initialColor = 'var(--text-color-primary)'
@@ -15,7 +16,7 @@ export const SocialHandle = (props: SocialHandleProps) => {
 
   return (
     <button
-      className={styles.social}
+      className={cx(styles.social, className)}
       onMouseEnter={onHover}
       onMouseLeave={onHoverLeave}
       onClick={() => {

@@ -33,5 +33,27 @@
         }
       }
     }
+
+    .follow_me {
+      width: 100%;
+      box-sizing: border-box;
+      background: var(--bg-color-primary);
+      padding: 60px 40px;
+
+      .heading {
+        color: var(--text-color-primary);
+        font-family: 'Cormorant-Semibold';
+        font-size: 50px;
+      }
+
+      .socials {
+        @include flex-align-center;
+        gap: 0 40px;
+
+        .link {
+          border: 2px solid var(--gray-border-color-secondary);
+        }
+      }
+    }
   }
 }
