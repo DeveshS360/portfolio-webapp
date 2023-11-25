@@ -15,6 +15,7 @@ $hover-animation-steps: 2;
   transition: all 0.5s ease-out;
   visibility: hidden;
   z-index: var(--nav_dropdown_z_index);
+  cursor: pointer;
 
   &.visible {
     opacity: 1;
