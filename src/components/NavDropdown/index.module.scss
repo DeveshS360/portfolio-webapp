@@ -41,8 +41,12 @@ $hover-animation-steps: 2;
 
   @include for-tablet-or-mobile {
     position: static;
-    padding: 20px;
     font-family: 'Poppins-Regular';
+    margin: 0;
+
+    &.visible {
+      margin-bottom: 20px;
+    }
   }
 }
 

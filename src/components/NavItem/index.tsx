@@ -25,7 +25,9 @@ export const NavItem = (props: NavItemProps) => {
     if (route && !dropdownItems?.length) {
       navigate(route)
       scrollToTop()
+      return
     }
+    if (isMobileOrTablet) setIsDropdownVisible((prev) => !prev)
   }
 
   const getLabel = () => {
@@ -52,7 +54,6 @@ export const NavItem = (props: NavItemProps) => {
             className={cx(styles.right_arrow, {
               [styles.rotate]: isDropDownVisible,
             })}
-            onClick={() => setIsDropdownVisible((prev) => !prev)}
           />
         )}
         {!isMobileOrTablet && (
