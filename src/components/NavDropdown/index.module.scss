@@ -33,6 +33,16 @@ $hover-animation-steps: 2;
       background: var(--text-color-primary);
       animation: hover-enter 0.4s linear;
     }
+
+    @include for-tablet-or-mobile {
+      animation: none;
+    }
+  }
+
+  @include for-tablet-or-mobile {
+    position: static;
+    padding: 20px;
+    font-family: 'Poppins-Regular';
   }
 }
 

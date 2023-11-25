@@ -2,6 +2,8 @@ import { NavDrawerProps } from './types'
 import cx from 'classnames'
 import styles from './index.module.scss'
 import { CloseOutlined } from '@ant-design/icons'
+import { Nav_Items } from 'src/constants/navigation'
+import { NavItem } from '../NavItem'
 
 export const NavDrawer = (props: NavDrawerProps) => {
   const { isOpen, onClose } = props
@@ -15,6 +17,11 @@ export const NavDrawer = (props: NavDrawerProps) => {
         <button className={styles.close} onClick={onClose}>
           <CloseOutlined style={iconStyle} />
         </button>
+        <div className={styles.nav_items}>
+          {Nav_Items.map((item) => (
+            <NavItem key={item.name} {...item} />
+          ))}
+        </div>
       </aside>
     </section>
   )
