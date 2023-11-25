@@ -1,4 +1,3 @@
-import { IS_SMALL_DESKTOP } from 'src/constants/screen'
 import { ConcentricCircles } from '../ConcentricCircles'
 import { NavigationHeader } from '../NavigationHeader'
 import layoutStyles from 'src/pages/Home/components/Introduction/index.module.scss'
@@ -6,8 +5,10 @@ import styles from './index.module.scss'
 import { PageHeaderProps } from './types'
 import cx from 'classnames'
 import { AppRoutes } from 'src/constants/routes'
+import { useDeviceWidth } from 'src/utils/viewport'
 
 export const PageHeader = (props: PageHeaderProps) => {
+  const { isSmallDesktop } = useDeviceWidth()
   const {
     title,
     redirectionPage = 'Home',
@@ -19,7 +20,7 @@ export const PageHeader = (props: PageHeaderProps) => {
     <div className={cx(layoutStyles.introduction, styles.page_header)}>
       <ConcentricCircles
         className={layoutStyles.top_left_circle}
-        circularGap={IS_SMALL_DESKTOP ? 55 : 65}
+        circularGap={isSmallDesktop ? 55 : 65}
         size={700}
       />
       <NavigationHeader />
@@ -37,7 +38,7 @@ export const PageHeader = (props: PageHeaderProps) => {
       </div>
       <ConcentricCircles
         className={cx(layoutStyles.bottom_left_circle, styles.bottom_circle)}
-        circularGap={IS_SMALL_DESKTOP ? 55 : 65}
+        circularGap={isSmallDesktop ? 55 : 65}
         size={700}
       />
     </div>

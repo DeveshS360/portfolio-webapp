@@ -5,12 +5,24 @@ import cx from 'classnames'
 import { LogoSection } from '../LogoSection'
 import { NavItem } from '../NavItem'
 import { AppRoutes } from 'src/constants/routes'
+import { MenuFoldOutlined } from '@ant-design/icons'
+import { useDeviceWidth } from 'src/utils/viewport'
 
 export const NavigationHeader = () => {
   const navRef = useRef<HTMLElement>(null)
   const placeHolderNavRef = useRef<HTMLElement>(null)
 
+  const menuIconStyle = {
+    color: 'var(--text-color-primary',
+    fontSize: 25,
+    cursor: 'pointer',
+  }
+
+  const { isMobileOrTablet } = useDeviceWidth()
+
   const handleScroll = () => {
+    if (!placeHolderNavRef.current || !navRef.current) return
+
     const scrollPos = window.scrollY
     if (scrollPos > 50) {
       navRef.current.classList.add(styles.scroll)
@@ -29,22 +41,39 @@ export const NavigationHeader = () => {
     }
   }, [])
 
-  return (
-    <>
+  const getPlaceHolderNav = () => {
+    if (isMobileOrTablet) return null
+    return (
       <nav
         ref={placeHolderNavRef}
         className={cx(styles.place_holder_nav, styles.hidden)}
       />
+    )
+  }
+
+  const getNavContentExcludingLogo = () => {
+    if (!isMobileOrTablet)
+      return (
+        <>
+          <div className={styles.container}>
+            {Nav_Items.map((item) => (
+              <NavItem key={item.name} {...item} />
+            ))}
+          </div>
+          <a className={styles.cta} href={AppRoutes.contactMe}>
+            Hire Me{' '}
+          </a>
+        </>
+      )
+    return <MenuFoldOutlined style={menuIconStyle} />
+  }
+
+  return (
+    <>
+      {getPlaceHolderNav()}
       <nav ref={navRef} className={styles.navigation_header}>
         <LogoSection />
-        <div className={styles.container}>
-          {Nav_Items.map((item) => (
-            <NavItem key={item.name} {...item} />
-          ))}
-        </div>
-        <a className={styles.cta} href={AppRoutes.contactMe}>
-          Hire Me{' '}
-        </a>
+        {getNavContentExcludingLogo()}
       </nav>
     </>
   )

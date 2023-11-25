@@ -1,0 +1,36 @@
+@import 'src/styles/mixins.scss';
+
+.nav_drawer {
+  visibility: hidden;
+  transition: all 0.5s linear;
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--modal_overlay_z_index);
+    background: rgb(0, 0, 0, 0, 5);
+  }
+
+  .drawer {
+    transform: translateX(100%);
+    padding: 20px;
+    background: var(--bg-color-secondary);
+    max-width: 400px;
+
+    .close {
+      outline: none;
+      background: inherit;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--gray-border-color-secondary);
+      cursor: pointer;
+
+      @include flex-center;
+    }
+  }
+
+  &.visible {
+    visibility: visible;
+  }
+}

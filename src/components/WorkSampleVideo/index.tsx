@@ -15,9 +15,7 @@ export const WorkSampleVideo = (props: WorkSampleVideoProps) => {
         <button className={styles.round_btn} onClick={() => setShowVideo(true)}>
           <span className={styles.icon}></span>
         </button>
-        {isDisplayTitle && (
-          <span className={styles.text}>Watch Work Sample Video</span>
-        )}
+        {isDisplayTitle && <span className={styles.text}>Watch Video</span>}
       </div>
       <EmbeddedVideo
         showVideo={showVideo}

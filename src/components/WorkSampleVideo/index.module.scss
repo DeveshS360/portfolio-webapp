@@ -50,6 +50,7 @@
   .text {
     font-family: 'Poppins-Regular';
     color: var(--text-color-secondary);
+    z-index: var(--introduction_z_index);
   }
 }
 
