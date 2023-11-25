@@ -39,7 +39,7 @@
 }
 
 @mixin for-mobile-only {
-  @media screen and (max-width: 549) {
+  @media screen and (max-width: 549px) {
     @content;
   }
 }

@@ -8,14 +8,24 @@
     position: fixed;
     inset: 0;
     z-index: var(--modal_overlay_z_index);
-    background: rgb(0, 0, 0, 0, 5);
+    background: rgb(0, 0, 0, 0.5);
   }
 
   .drawer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 400px;
     transform: translateX(100%);
     padding: 20px;
     background: var(--bg-color-secondary);
-    max-width: 400px;
+    z-index: var(--nav_drawer_z_index);
+    transition: inherit;
+
+    @include for-mobile-only {
+      width: 300px;
+    }
 
     .close {
       outline: none;
@@ -32,5 +42,9 @@
 
   &.visible {
     visibility: visible;
+
+    .drawer {
+      transform: translateX(0);
+    }
   }
 }

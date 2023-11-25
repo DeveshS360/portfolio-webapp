@@ -2,69 +2,66 @@
 
 $hover-animation-steps: 2;
 
-
 .nav_dropdown {
+  position: absolute;
+  width: 300px;
+  padding: 0;
+  top: 60px;
+  left: 0;
+  background: var(--bg-color-secondary);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  visibility: hidden;
+  z-index: var(--nav_dropdown_z_index);
 
-    position: absolute;
-    box-sizing: border-box;
-    width: 300px;
-    padding: 0;
-    top: 60px;
-    left: 0;
-    background: var(--bg-color-secondary);
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.5s ease-out;
-    visibility: hidden;
-    z-index: var(--nav_dropdown_z_index);
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    max-height: 300px;
+  }
 
+  .dropdown_item {
+    list-style-type: none;
+    color: var(--text-color-primary);
+    padding: 5px 30px;
+    animation: hover-exit 0.4s linear;
 
-    &.visible {
-        opacity: 1;
-        visibility: visible;
-        max-height: 300px;
-
+    &:hover {
+      color: var(--bg-color-primary);
+      background: var(--text-color-primary);
+      animation: hover-enter 0.4s linear;
     }
-
-
-    .dropdown_item {
-        list-style-type: none;
-        color: var(--text-color-primary);
-        padding: 5px 30px;
-        animation: hover-exit 0.4s linear;
-
-        &:hover {
-            color: var(--bg-color-primary);
-            background: var(--text-color-primary);
-            animation: hover-enter 0.4s linear;
-        }
-    }
+  }
 }
 
-
-
 @keyframes hover-enter {
+  $endStep: 100 - $hover-animation-steps;
 
-    $endStep: 100 - $hover-animation-steps;
-
-    @for $i from 0 to $endStep{
-        #{$i * 1%} {
-            @include gradient-two-colors($i, var(--text-color-primary), var(--bg-color-secondary))
-        }
-        $i: $i +  $hover-animation-steps
+  @for $i from 0 to $endStep {
+    #{$i * 1%} {
+      @include gradient-two-colors(
+        $i,
+        var(--text-color-primary),
+        var(--bg-color-secondary)
+      );
     }
-
+    $i: $i + $hover-animation-steps;
+  }
 }
 
 @keyframes hover-exit {
-    
-    $endStep: 100 - $hover-animation-steps;
+  $endStep: 100 - $hover-animation-steps;
 
-    @for $i from 0 to $endStep{
-        #{$i * 1%} {
-            @include gradient-two-colors($i, var(--bg-color-secondary),  var(--text-color-primary),)
-        }
-        $i: $i +  $hover-animation-steps
+  @for $i from 0 to $endStep {
+    #{$i * 1%} {
+      @include gradient-two-colors(
+        $i,
+        var(--bg-color-secondary),
+        var(--text-color-primary)
+      );
     }
+    $i: $i + $hover-animation-steps;
+  }
 }

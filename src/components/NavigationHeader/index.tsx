@@ -1,16 +1,22 @@
 import styles from './index.module.scss'
 import { Nav_Items } from '../../constants/navigation'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import cx from 'classnames'
 import { LogoSection } from '../LogoSection'
 import { NavItem } from '../NavItem'
 import { AppRoutes } from 'src/constants/routes'
 import { MenuFoldOutlined } from '@ant-design/icons'
 import { useDeviceWidth } from 'src/utils/viewport'
+import { NavDrawer } from '../NavDrawer'
 
 export const NavigationHeader = () => {
   const navRef = useRef<HTMLElement>(null)
   const placeHolderNavRef = useRef<HTMLElement>(null)
+
+  const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false)
+
+  const closeNavDrawer = () => setIsNavDrawerOpen(false)
+  const openNavDrawer = () => setIsNavDrawerOpen(true)
 
   const menuIconStyle = {
     color: 'var(--text-color-primary',
@@ -65,7 +71,7 @@ export const NavigationHeader = () => {
           </a>
         </>
       )
-    return <MenuFoldOutlined style={menuIconStyle} />
+    return <MenuFoldOutlined style={menuIconStyle} onClick={openNavDrawer} />
   }
 
   return (
@@ -75,6 +81,7 @@ export const NavigationHeader = () => {
         <LogoSection />
         {getNavContentExcludingLogo()}
       </nav>
+      <NavDrawer isOpen={isNavDrawerOpen} onClose={closeNavDrawer} />
     </>
   )
 }

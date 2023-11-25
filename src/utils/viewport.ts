@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react'
-import { DESKTOP_BREAK_POINTS } from 'src/constants/screen'
+import {
+  checkIfMediumDesktop,
+  checkIfMobileOrTablet,
+  checkIfSmallDesktop,
+} from 'src/constants/screen'
 
 export const useWindowScroll = (scrollFn: () => void) => {
   useEffect(() => {
@@ -32,21 +36,17 @@ export const scrollToTop = () => {
 }
 
 export const useDeviceWidth = () => {
-  const [isSmallDesktop, setIsSmallDesktop] = useState(false)
-  const [isMediumDesktop, setIsMediumDesktop] = useState(false)
-  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false)
+  const [isSmallDesktop, setIsSmallDesktop] = useState(checkIfSmallDesktop())
+  const [isMediumDesktop, setIsMediumDesktop] = useState(checkIfMediumDesktop())
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(
+    checkIfMobileOrTablet()
+  )
 
   const handleWindowResize = () => {
-    setIsSmallDesktop(
-      window.innerWidth >= DESKTOP_BREAK_POINTS.small &&
-        window.innerWidth <= DESKTOP_BREAK_POINTS.medium - 1
-    )
-    setIsMediumDesktop(
-      window.innerWidth >= DESKTOP_BREAK_POINTS.medium &&
-        window.innerWidth <= DESKTOP_BREAK_POINTS.large - 1
-    )
+    setIsSmallDesktop(checkIfSmallDesktop())
+    setIsMediumDesktop(checkIfMediumDesktop)
 
-    setIsMobileOrTablet(window.innerWidth < DESKTOP_BREAK_POINTS.small)
+    setIsMobileOrTablet(checkIfMobileOrTablet())
   }
   useEffect(() => {
     window.addEventListener('resize', handleWindowResize)
