@@ -29,8 +29,6 @@
     @include for-small-desktop {
       gap: 0px 30px;
     }
-
-    cursor: pointer;
   }
 
   @include for-tablet-or-mobile {
