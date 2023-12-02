@@ -1,44 +1,62 @@
 @import 'src/styles/mixins.scss';
 
 .project_section {
+  .heading {
+    margin-bottom: 40px;
+  }
+  .navigation {
+    @include flex-center;
+    justify-content: space-between;
+    align-items: start;
 
-    .navigation {
-       @include flex-center;
-       justify-content: space-between;
-       align-items: start;
+    @include for-mobile-only {
+      flex-direction: column;
+      justify-content: unset;
+    }
 
+    .nav_btn_container {
+      display: flex;
+      gap: 0px 20px;
 
-        .nav_btn_container {
-            display: flex;
-            gap: 0px 20px;
+      @include for-mobile-only {
+        gap: 0px 10px;
+        margin-bottom: 30px;
+      }
 
-            .nav_cta {
-                position: relative;
-                width: 6vw;
-                height: 6vw;
-                background: inherit;
-                border: 1px solid var(--gray-border-color-secondary);
-                color: var(--text-color-secondary);
+      .nav_cta {
+        position: relative;
+        width: 75px;
+        height: 75px;
+        background: inherit;
+        border: 1px solid var(--gray-border-color-secondary);
+        color: var(--text-color-secondary);
 
-                &::before {
-                    content: '\ea7c';
-                    @include take-to-center;
-                    font-family: 'Ico';
-                    font-size: 18px;
-        
-                }
-
-                &.left {
-                    transform: rotate(180deg);
-                }
-
-                &.disabled {
-                    cursor: not-allowed;
-                    opacity: 0.5;
-                }
-
-            }
+        @include for-tablet-or-mobile {
+          width: 60px;
+          height: 60px;
         }
 
+        @include for-mobile-only {
+          width: 45px;
+          height: 45px;
+        }
+
+        &::before {
+          content: '\ea7c';
+          @include take-to-center;
+          font-family: 'Ico';
+          font-size: 18px;
+        }
+
+        &.left {
+          transform: rotate(180deg);
+        }
+
+        &.disabled {
+          cursor: not-allowed;
+          opacity: 0.5;
+        }
+      }
     }
+  }
 }

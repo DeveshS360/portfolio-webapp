@@ -1,19 +1,17 @@
 .container {
+  width: 100%;
+  padding: 36px;
+  background: var(--bg-color-secondary);
+
+  .field {
+    font-size: 18px;
+    color: var(--text-color-secondary);
+    font-family: 'Poppins-Regular';
+  }
+
+  .meter_wrapper {
     width: 100%;
-    box-sizing: border-box;
-    padding: 36px;
-    background: var(--bg-color-secondary);
-
-    .field {
-        font-size: 18px;
-        color: var(--text-color-secondary);
-        font-family: 'Poppins-Regular';
-    }
-
-    .meter_wrapper {
-        width: 100%;
-        background: var(--gray-border-color-secondary);
-        height: 5px;
-    }
-    
+    background: var(--gray-border-color-secondary);
+    height: 5px;
+  }
 }

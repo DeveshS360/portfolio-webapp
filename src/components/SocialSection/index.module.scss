@@ -1,36 +1,75 @@
 @import '../../styles/mixins.scss';
 
 .social_section {
-    background: inherit;
-    position: relative;
-    width: 50%;
+  background: inherit;
+  position: relative;
+  width: 50%;
 
-    .hero {
-        position: absolute;
-        transform: scale(0.8) translate(-45%, 50%);
+  @include for-tablet-or-mobile {
+    max-height: 700px;
+    overflow: hidden;
+    width: 100%;
 
-        @include for-small-desktop {
-            transform: scale(0.6) translate(-70%, 60%);
-        }
-        
-        bottom: 0;
-        left: 5%;
-        z-index: var(--hero_z_index);
-        pointer-events: none;
+    @include flex-center;
+  }
+
+  @include for-mobile-only {
+    max-height: 400px;
+  }
+
+  .hero {
+    position: absolute;
+    transform: scale(0.8) translate(-45%, 50%);
+
+    @include for-small-desktop {
+      transform: scale(0.6) translate(-70%, 60%);
     }
 
-    .circles {
-        position: absolute;
-        bottom: 25vh;
-        left: 25vw;
+    @include for-tablet-or-mobile {
+      position: static;
+      transform: scale(0.55) translateY(25%);
     }
 
-    .social_icons_container {
-
-      @include put-on-circle(4, 260px, 45, -90);
-
-      @include for-small-desktop {
-        @include put-on-circle(4, 210px, 45, -90);
-      }
+    @include for-mobile-only {
+      position: static;
+      transform: scale(0.3) translateY(15%);
     }
+
+    bottom: 0;
+    left: 5%;
+    z-index: var(--hero_z_index);
+    pointer-events: none;
+  }
+
+  .circles {
+    position: absolute;
+    bottom: 25vh;
+    left: 25vw;
+
+    @include for-tablet-or-mobile {
+      bottom: 30vh;
+      left: 62vw;
+    }
+
+    @include for-mobile-only {
+      bottom: 20vh;
+      left: 58vw;
+    }
+  }
+
+  .social_icons_container {
+    @include put-on-circle(4, 260px, 45, -90);
+
+    @include for-small-desktop {
+      @include put-on-circle(4, 210px, 45, -90);
+    }
+
+    @include for-tablet-or-mobile {
+      @include put-on-circle(4, 180px, 35, -70);
+    }
+
+    @include for-mobile-only {
+      @include put-on-circle(4, 130px, 35, -65);
+    }
+  }
 }

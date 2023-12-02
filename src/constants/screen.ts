@@ -4,9 +4,16 @@ const DESKTOP_BREAK_POINTS = {
   large: 1600,
 }
 
-export const IS_SMALL_DESKTOP =
-  window.innerWidth >= DESKTOP_BREAK_POINTS.small &&
-  window.innerWidth <= DESKTOP_BREAK_POINTS.medium - 1
-export const IS_MEDIUM_DESKTOP =
-  window.innerWidth >= DESKTOP_BREAK_POINTS.medium &&
-  window.innerWidth <= DESKTOP_BREAK_POINTS.large - 1
+const MOBILE_WIDTH = 549
+
+export const checkIfSmallDesktop = () =>
+  document.body.clientWidth >= DESKTOP_BREAK_POINTS.small &&
+  document.body.clientWidth <= DESKTOP_BREAK_POINTS.medium - 1
+export const checkIfMediumDesktop = () =>
+  document.body.clientWidth >= DESKTOP_BREAK_POINTS.medium &&
+  document.body.clientWidth <= DESKTOP_BREAK_POINTS.large - 1
+
+export const checkIfMobileOrTablet = () =>
+  document.body.clientWidth < DESKTOP_BREAK_POINTS.small
+
+export const checkifMobile = () => document.body.clientWidth <= 549

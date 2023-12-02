@@ -9,6 +9,10 @@
   .main {
     display: flex;
     justify-content: space-between;
+
+    @include for-tablet-or-mobile {
+      display: block;
+    }
   }
 
   .top_left_circle {
@@ -30,6 +34,10 @@
     @include for-small-desktop {
       margin-left: calc((100% - var(--small-desktop-content-width)) / 2);
     }
+
+    @include for-tablet-or-mobile {
+      margin-left: calc((100% - var(--small-desktop-content-width)) / 2);
+    }
   }
 
   .about {
@@ -38,14 +46,51 @@
     line-height: 1.5;
 
     font-family: 'Cormorant-Bold';
+
+    @include for-tablet-or-mobile {
+      margin-top: 25px;
+    }
+
     .text {
-      font-size: 4vw;
+      font-size: 75px;
       position: relative;
       z-index: var(--introduction_z_index);
+
+      @include for-medium-desktop {
+        font-size: 60px;
+      }
+
+      @include for-small-desktop {
+        font-size: 45px;
+      }
+
+      @include for-tablet-or-mobile {
+        font-size: 35px;
+      }
+
+      @include for-mobile-only {
+        font-size: 30px;
+      }
     }
 
     .name {
-      font-size: 5vw;
+      font-size: 90px;
+
+      @include for-medium-desktop {
+        font-size: 75px;
+      }
+
+      @include for-small-desktop {
+        font-size: 60px;
+      }
+
+      @include for-tablet-or-mobile {
+        font-size: 60px;
+      }
+
+      @include for-mobile-only {
+        font-size: 50px;
+      }
     }
 
     .underline {
@@ -54,13 +99,17 @@
       &::after {
         content: '';
         display: block;
-        width: 18vw;
+        width: 200px;
         height: 100%;
         position: absolute;
         background: url('/assets/images/name-underline.png') no-repeat;
-        bottom: 0px;
         left: -20px;
-        top: 6vw;
+        top: 60px;
+
+        @include for-mobile-only {
+          top: 50px;
+          width: 180px;
+        }
       }
     }
   }
@@ -72,10 +121,19 @@
     color: var(--text-color-secondary);
     max-width: 450px;
     margin-top: 50px;
+
+    @include for-tablet-or-mobile {
+      margin-top: 20px;
+      font-size: 16px;
+    }
   }
 
   .resume {
     margin: 50px 0 100px 0;
+
+    @include for-tablet-or-mobile {
+      margin: 50px 0;
+    }
   }
 
   .bottom_left_circle {

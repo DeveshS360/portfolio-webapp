@@ -1,16 +1,23 @@
-.get_resume {
+@import 'src/styles/mixins.scss';
 
-    font-size: 15px;
-    padding: 30px 60px;
-    border-radius: 42px;
-    &::after {
-        content: '\ef08';
-        margin-left: 10px;
-    }
+.get_resume {
+  font-size: 15px;
+  padding: 30px 60px;
+  border-radius: 42px;
+
+  &::after {
+    content: '\ef08';
+    margin-left: 10px;
+  }
+
+  @include for-tablet-or-mobile {
+    padding: 15px 30px;
+    border-radius: 30px;
+  }
 }
 
 a {
-    text-decoration: none;
-    display: inline-block;
-    width: fit-content;
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
 }

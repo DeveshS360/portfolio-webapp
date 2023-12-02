@@ -1,33 +1,49 @@
+@import 'src/styles/mixins.scss';
+
 .nav_item {
-    position: relative;
-    font-size: 18px;
-    color: var(--text-color-secondary);
-    font-family: 'Poppins-Regular';
-    padding: 5px;
+  position: relative;
+  font-size: 18px;
+  color: var(--text-color-secondary);
+  font-family: 'Poppins-Regular';
+  padding: 5px;
+  transition: all 0.5s ease;
+  margin-top: 5px;
+  cursor: pointer;
+
+  .right_arrow {
+    transition: all 0.3s linear;
+    &.rotate {
+      transform: rotate(90deg);
+    }
+  }
+
+  .cursive {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  &:hover {
+    background-repeat: no-repeat;
+    background-position: start;
     transition: all 0.5s ease;
-    margin-top: 5px;
+    color: var(--text-color-primary);
 
     .cursive {
-        visibility: hidden;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.5s ease;
     }
+  }
 
-    &:hover {
-        background-repeat: no-repeat;
-        background-position: start;
-        transition: all 0.5s ease;
-        color: var(--text-color-primary);
-
-        .cursive {
-            visibility: visible;
-            opacity: 1;
-            transition: all 0.5s ease;
-        }
-
-        
-    }
+  @include for-tablet-or-mobile {
+    font-size: 16px;
+    color: var(--text-color-primary);
+    @include flex-align-center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }

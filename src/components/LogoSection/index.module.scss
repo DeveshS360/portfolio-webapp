@@ -1,11 +1,25 @@
+@import 'src/styles/mixins.scss';
+
 .logo_section {
-    display: flex;
-    align-items: center;
-    gap: 0px 15px;
-    color: var(--text-color-primary);
-    font-family: 'Cormorant-Semibold';
-    font-size: 36px;
-    margin-top:  -3px;
-    position: relative;
-    z-index: var(--introduction_z_index);
+  display: flex;
+  align-items: center;
+  gap: 0px 15px;
+  color: var(--text-color-primary);
+  font-family: 'Cormorant-Semibold';
+  font-size: 36px;
+  margin-top: -3px;
+  position: relative;
+  z-index: var(--introduction_z_index);
+
+  @include for-mobile-only {
+    font-size: 28px;
+  }
+
+  img {
+    width: 55px;
+
+    @include for-mobile-only {
+      width: 40px;
+    }
+  }
 }

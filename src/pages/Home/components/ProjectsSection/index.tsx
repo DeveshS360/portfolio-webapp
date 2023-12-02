@@ -12,9 +12,12 @@ import projectBg1 from 'assets/images/dummy_project1.webp'
 import projectBg2 from 'assets/images/dummy_project2.webp'
 import projectBg3 from 'assets/images/dummy_project3.webp'
 import { PROJECT_URLS } from 'src/constants/projects'
+import { useDeviceWidth } from 'src/utils/viewport'
 
 export const ProjectSection = () => {
   const [activeItem, setActiveItem] = useState(0)
+
+  const { isMobileOrTablet } = useDeviceWidth()
 
   const items = [
     {
@@ -40,13 +43,19 @@ export const ProjectSection = () => {
   const handleNavigation = (action: NavOptions) => {
     if (action === NavOptions.prev && activeItem > 0)
       setActiveItem((prev) => prev - 1)
-    else if (action === NavOptions.next && activeItem < items.length - 2)
+    else if (
+      action === NavOptions.next &&
+      activeItem < items.length - (isMobileOrTablet ? 1 : 2)
+    )
       setActiveItem((prev) => prev + 1)
   }
 
   const checkIfDisabled = (action: NavOptions) => {
     if (action === NavOptions.prev && activeItem === 0) return true
-    if (action === NavOptions.next && activeItem === items.length - 2)
+    if (
+      action === NavOptions.next &&
+      activeItem === items.length - (isMobileOrTablet ? 1 : 2)
+    )
       return true
     return false
   }
@@ -64,7 +73,9 @@ export const ProjectSection = () => {
               </span>
               <span className={layoutStyles.title}>Awesome Portfolio</span>
             </div>
-            <div className={layoutStyles.heading}>My Projects</div>
+            <div className={cx(layoutStyles.heading, styles.heading)}>
+              My Projects
+            </div>
           </div>
           <div className={styles.nav_btn_container}>
             <button

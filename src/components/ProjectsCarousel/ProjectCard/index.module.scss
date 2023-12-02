@@ -1,46 +1,74 @@
 @import 'src/styles/mixins.scss';
 
 .project_card {
-    max-width: calc(50% - var(--project-card-gap)/2);
-    min-width: calc(50% - var(--project-card-gap)/2);
+  max-width: calc(50% - var(--project-card-gap) / 2);
+  min-width: calc(50% - var(--project-card-gap) / 2);
 
-    .img_container {
-        width: 100%;
-        overflow: hidden;
-        opacity: 0.95;
-        position: relative;
-        flex-shrink: 0;
-        cursor: pointer;
-        margin-bottom: 40px;
+  @include for-tablet-or-mobile {
+    max-width: 100%;
+    min-width: 100%;
+  }
 
-        .square_box {
-            height: 0;
-            padding-bottom: 100%;
-            background: var(--bg-color-primary);
+  .img_container {
+    width: 100%;
+    overflow: hidden;
+    opacity: 0.95;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    margin-bottom: 40px;
 
-        }
+    .square_box {
+      height: 0;
+      padding-bottom: 100%;
+      background: var(--bg-color-primary);
 
-        .faded_pic {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            opacity: 0.1;
-            width: 80%;
-            
-        }
+      @include for-tablet-or-mobile {
+        padding-bottom: 50%;
+      }
 
-        .project_pic {
-            @include take-to-center;
-            width: 90%;
-            border-radius: 10px;
-        }
+      @include for-mobile-only {
+        padding-bottom: 100%;
+      }
     }
 
-    .title {
-        font-family: 'Poppins-Medium';
-        font-size: 2vw;
-        color: var(--text-color-primary);
+    .faded_pic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      opacity: 0.1;
+      width: 80%;
     }
-    
+
+    .project_pic {
+      @include take-to-center;
+      width: 90%;
+      border-radius: 10px;
+
+      @include for-tablet-or-mobile {
+        height: 90%;
+        width: auto;
+      }
+
+      @include for-mobile-only {
+        width: 90%;
+        height: auto;
+      }
+    }
+  }
+
+  .title {
+    font-family: 'Poppins-Medium';
+    font-size: 30px;
+    color: var(--text-color-primary);
+
+    @include for-tablet-or-mobile {
+      font-size: 25px;
+    }
+
+    @include for-mobile-only {
+      font-size: 20px;
+    }
+  }
 }

@@ -1,10 +1,16 @@
-.metrics {
-    background: var(--bg-color-tertiary);
-    padding: 100px 0px;
+@import 'src/styles/mixins.scss';
 
-    .content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+.metrics {
+  background: var(--bg-color-tertiary);
+  padding: 100px 0px;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include for-mobile-only {
+      flex-direction: column;
     }
+  }
 }

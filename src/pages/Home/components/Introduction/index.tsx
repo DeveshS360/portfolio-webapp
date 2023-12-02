@@ -4,18 +4,23 @@ import { NavigationHeader } from 'src/components/NavigationHeader'
 import { DownloadResume } from 'src/components/DownloadResume'
 import { WorkSampleVideo } from 'src/components/WorkSampleVideo'
 import { SocialSection } from 'src/components/SocialSection'
-import { IS_SMALL_DESKTOP } from 'src/constants/screen'
+import { useDeviceWidth } from 'src/utils/viewport'
 
 export const Introduction = () => {
+  const { isSmallDesktop, isMobileOrTablet } = useDeviceWidth()
+
   return (
     <section className={styles.introduction}>
       <NavigationHeader />
-      <ConcentricCircles
-        className={styles.top_left_circle}
-        circularGap={IS_SMALL_DESKTOP ? 55 : 65}
-        size={440}
-      />
+      {!isMobileOrTablet && (
+        <ConcentricCircles
+          className={styles.top_left_circle}
+          circularGap={isSmallDesktop ? 55 : 65}
+          size={440}
+        />
+      )}
       <div className={styles.main}>
+        {isMobileOrTablet && <SocialSection />}
         <section className={styles.info}>
           <div className={styles.about}>
             <div className={styles.text}>Hello! I am</div>
@@ -33,13 +38,15 @@ export const Introduction = () => {
           </div>
           <WorkSampleVideo />
         </section>
-        <SocialSection />
+        {!isMobileOrTablet && <SocialSection />}
       </div>
-      <ConcentricCircles
-        className={styles.bottom_left_circle}
-        circularGap={IS_SMALL_DESKTOP ? 55 : 65}
-        size={440}
-      />
+      {!isMobileOrTablet && (
+        <ConcentricCircles
+          className={styles.bottom_left_circle}
+          circularGap={isSmallDesktop ? 55 : 65}
+          size={440}
+        />
+      )}
     </section>
   )
 }

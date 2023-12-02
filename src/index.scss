@@ -1,19 +1,22 @@
 @import '/src/styles/variables.scss';
 @import '/src/styles/fonts.scss';
 
-html, body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-
-    overscroll-behavior: none;
-    @include colors();
-
+  overscroll-behavior: none;
+  @include colors();
 }
 
 .no-vertical-scroll {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }

@@ -7,16 +7,14 @@
     position: fixed;
     top: 0;
     z-index: var(--navbar_z_index);
-    width: 70%;
+    width: 100%;
     padding: 30px 15%;
 
     @include for-small-desktop {
-      width: var(--small-desktop-content-width);
       padding: 30px calc((100% - var(--small-desktop-content-width)) / 2);
     }
 
     @include for-medium-desktop {
-      width: var(--medium-desktop-content-width);
       padding: 30px calc((100% - var(--medium-desktop-content-width)) / 2);
     }
 
@@ -31,8 +29,13 @@
     @include for-small-desktop {
       gap: 0px 30px;
     }
+  }
 
-    cursor: pointer;
+  @include for-tablet-or-mobile {
+    background: var(--bg-color-secondary);
+    width: 100%;
+    padding: 30px calc((100% - var(--small-desktop-content-width)) / 2);
+    flex-direction: row;
   }
 }
 

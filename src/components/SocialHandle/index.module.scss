@@ -10,6 +10,16 @@
   cursor: pointer;
   @include flex-center;
 
+  @include for-tablet-or-mobile {
+    width: 45px;
+    height: 45px;
+  }
+
+  @include for-mobile-only {
+    width: 30px;
+    height: 30px;
+  }
+
   &:hover {
     background: var(--text-color-primary) !important;
     transition: all 0.5s linear;

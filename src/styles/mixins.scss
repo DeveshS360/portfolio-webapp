@@ -38,6 +38,18 @@
   }
 }
 
+@mixin for-mobile-only {
+  @media screen and (max-width: 549px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-or-mobile {
+  @media screen and (max-width: 999px) {
+    @content;
+  }
+}
+
 @mixin for-small-desktop {
   @media screen and (min-width: 1000px) and (max-width: 1299px) {
     @content;
@@ -65,6 +77,12 @@
 
   @include for-medium-desktop {
     width: var(--medium-desktop-content-width);
+  }
+
+  @include for-tablet-or-mobile {
+    width: var(--small-desktop-content-width);
+    flex-direction: column-reverse;
+    gap: 20px 0;
   }
 
   margin: 0 auto;

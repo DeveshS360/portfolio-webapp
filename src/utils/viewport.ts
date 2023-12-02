@@ -1,4 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import {
+  checkIfMediumDesktop,
+  checkIfMobileOrTablet,
+  checkIfSmallDesktop,
+  checkifMobile,
+} from 'src/constants/screen'
 
 export const useWindowScroll = (scrollFn: () => void) => {
   useEffect(() => {
@@ -28,4 +34,30 @@ export const scrollToTop = () => {
     top: 0,
     behavior: 'smooth',
   })
+}
+
+export const useDeviceWidth = () => {
+  const [isSmallDesktop, setIsSmallDesktop] = useState(checkIfSmallDesktop())
+  const [isMediumDesktop, setIsMediumDesktop] = useState(checkIfMediumDesktop())
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(
+    checkIfMobileOrTablet()
+  )
+  const [isMobile, setIsMobile] = useState(checkifMobile())
+
+  const handleWindowResize = () => {
+    setIsSmallDesktop(checkIfSmallDesktop())
+    setIsMediumDesktop(checkIfMediumDesktop)
+
+    setIsMobileOrTablet(checkIfMobileOrTablet())
+    setIsMobile(checkifMobile())
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowResize)
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize)
+    }
+  }, [])
+
+  return { isMediumDesktop, isSmallDesktop, isMobileOrTablet, isMobile }
 }

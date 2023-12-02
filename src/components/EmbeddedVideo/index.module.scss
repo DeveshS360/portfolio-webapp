@@ -1,55 +1,52 @@
 @import '../../styles/mixins.scss';
 
 .overaly {
-    position: fixed;
-    inset: 0;
-    background: rgba(23, 23, 23, 0.85);
-    opacity: 0;
-    visibility: hidden;
-    z-index: var(--modal_overlay_z_index);
-    transition: all 0.5s linear;
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 23, 23, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  z-index: var(--modal_overlay_z_index);
+  transition: all 0.5s linear;
 
-    .video_container {
+  .video_container {
+    @include take-to-center;
+    opacity: inherit;
+    transition: inherit;
+    height: 56.25vw;
+    width: 100%;
+    overflow-y: scroll;
+    background: transparent;
+    display: flex;
+    justify-content: center;
 
-        @include take-to-center;
-        opacity: inherit;
-        transition: inherit;
-        height: 100%;
-        width: 100%;
-        overflow-y: scroll;
-        background: transparent;
-        display: flex;
-        justify-content: center;
-
-    
-        .video {
-            border-radius: 5px;
-            border: none;
-            border: none;
-            opacity: inherit;
-            transition: inherit;
-            margin: 40px 0;
-        }
+    .video {
+      border-radius: 5px;
+      border: none;
+      border: none;
+      opacity: inherit;
+      transition: inherit;
+      margin: 40px 0;
     }
+  }
 
-    &.visible {
-        visibility: visible;
-        opacity: 1;
-        transition: all 0.5 linear;
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5 linear;
 
-        .video {
-            opacity: inherit;
-            transition: inherit;
-        }
+    .video {
+      opacity: inherit;
+      transition: inherit;
     }
+  }
 
-    .cross {
-        border: none;
-        background: none;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-
-    }
+  .cross {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
 }
