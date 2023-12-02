@@ -1,33 +1,54 @@
 @import 'src/styles/mixins.scss';
 
 .metric_section {
+  display: flex;
+  gap: 0px 45px;
+  align-items: center;
 
-    display: flex;
-    gap: 0px 45px;
-    align-items: center;
+  @include for-tablet-or-mobile {
+    flex-direction: column;
+  }
 
-    .icon_section {
-        width: 70px;
-        height: 70px;
-        border-radius: 15px;
-        border: 1px solid var(--gray-border-color-secondary);
+  .icon_section {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid var(--gray-border-color-secondary);
 
-        @include flex-center;
+    @include flex-center;
+  }
+
+  .metric {
+    width: 200px;
+
+    @include for-tablet-or-mobile {
+      width: unset;
+      text-align: center;
     }
 
-    .metric {
-
-        width: 200px;
-        .count {
-            font-size: 52px;
-            font-family: 'Poppins-Light';
-            color: var(--text-color-primary);
-            margin-bottom: 20px;
-        }
-
-        .text {
-            font-family: 'Poppins-Regular';
-            color: var(--text-color-secondary);
-        }
+    @include for-mobile-only {
+      margin-bottom: 40px;
     }
+
+    .count {
+      font-size: 52px;
+      font-family: 'Poppins-Light';
+      color: var(--text-color-primary);
+      margin-bottom: 20px;
+
+      @include for-tablet-or-mobile {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+
+      @include for-mobile-only {
+        margin-bottom: 0;
+      }
+    }
+
+    .text {
+      font-family: 'Poppins-Regular';
+      color: var(--text-color-secondary);
+    }
+  }
 }
