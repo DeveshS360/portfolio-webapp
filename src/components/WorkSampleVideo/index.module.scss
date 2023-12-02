@@ -10,6 +10,7 @@
 
   @include for-tablet-or-mobile {
     justify-content: start;
+    gap: 0px 20px;
   }
 
   .round_btn {
@@ -24,6 +25,11 @@
     margin-bottom: 50px;
 
     @include for-tablet-or-mobile {
+      width: 70px;
+      height: 70px;
+    }
+
+    @include for-mobile-only {
       width: 50px;
       height: 50px;
     }

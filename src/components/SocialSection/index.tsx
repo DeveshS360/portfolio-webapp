@@ -40,6 +40,10 @@ export const SocialSection = () => {
         circularGap={getCircularGap()}
         size={getCircleSize()}
         boldIdx={2}
+        style={{
+          borderLeft: 'none',
+          borderBottom: 'none',
+        }}
       >
         <div className={styles.social_icons_container}>
           <SocialHandle Icon={LinkedinFilled} redirectionUrl={LINKEDIN_URL} />

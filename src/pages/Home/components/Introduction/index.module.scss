@@ -65,11 +65,11 @@
       }
 
       @include for-tablet-or-mobile {
-        font-size: 45px;
+        font-size: 35px;
       }
 
       @include for-mobile-only {
-        font-size: 35px;
+        font-size: 30px;
       }
     }
 
@@ -99,13 +99,17 @@
       &::after {
         content: '';
         display: block;
-        width: 18vw;
+        width: 200px;
         height: 100%;
         position: absolute;
         background: url('/assets/images/name-underline.png') no-repeat;
-        bottom: 0px;
         left: -20px;
-        top: 6vw;
+        top: 60px;
+
+        @include for-mobile-only {
+          top: 50px;
+          width: 180px;
+        }
       }
     }
   }
@@ -125,6 +129,10 @@
 
   .resume {
     margin: 50px 0 100px 0;
+
+    @include for-tablet-or-mobile {
+      margin: 50px 0;
+    }
   }
 
   .bottom_left_circle {
