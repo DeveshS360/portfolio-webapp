@@ -17,7 +17,9 @@ export const SpecialSkills = () => {
             </span>
             <span className={layoutStyles.title}>My Skills</span>
           </div>
-          <div className={layoutStyles.heading}>My top technical skills.</div>
+          <div className={cx(layoutStyles.heading, styles.heading)}>
+            My top technical skills.
+          </div>
           <DownloadResume />
         </div>
         <div className={styles.right}>

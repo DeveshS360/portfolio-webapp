@@ -34,12 +34,8 @@
   @include for-tablet-or-mobile {
     background: var(--bg-color-secondary);
     width: 100%;
-    padding: 30px 100px;
-  }
-
-  @include for-mobile-only {
-    width: 100%;
-    padding: 30px 30px;
+    padding: 30px calc((100% - var(--small-desktop-content-width)) / 2);
+    flex-direction: row;
   }
 }
 

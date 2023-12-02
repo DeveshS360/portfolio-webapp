@@ -8,8 +8,8 @@ export const EmbeddedVideo = (props: EmbeddedVideoProps) => {
   const {
     showVideo,
     setShowVideo,
-    width = '60%',
-    height = 600,
+    width = '80%',
+    height = 'auto',
     ...restProps
   } = props
 

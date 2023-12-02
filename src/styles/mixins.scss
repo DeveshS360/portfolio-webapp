@@ -79,6 +79,12 @@
     width: var(--medium-desktop-content-width);
   }
 
+  @include for-tablet-or-mobile {
+    width: var(--small-desktop-content-width);
+    flex-direction: column-reverse;
+    gap: 20px 0;
+  }
+
   margin: 0 auto;
   background: inherit;
 }
