@@ -20,6 +20,7 @@ export const Introduction = () => {
         />
       )}
       <div className={styles.main}>
+        {isMobileOrTablet && <SocialSection />}
         <section className={styles.info}>
           <div className={styles.about}>
             <div className={styles.text}>Hello! I am</div>
@@ -37,7 +38,7 @@ export const Introduction = () => {
           </div>
           <WorkSampleVideo />
         </section>
-        <SocialSection />
+        {!isMobileOrTablet && <SocialSection />}
       </div>
       {!isMobileOrTablet && (
         <ConcentricCircles

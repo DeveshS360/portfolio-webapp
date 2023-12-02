@@ -21,7 +21,7 @@ export const SocialSection = () => {
 
   const getCircleSize = () => {
     if (isSmallDesktop) return 300
-    if (isMobile) return 300
+    if (isMobile) return 260
     if (isMobileOrTablet) return 360
 
     return 400
@@ -33,7 +33,7 @@ export const SocialSection = () => {
   }
 
   return (
-    <aside className={styles.social_section}>
+    <section className={styles.social_section}>
       <img className={styles.hero} src={heroImgUrl} alt="hero" />
       <ConcentricCircles
         className={styles.circles}
@@ -48,6 +48,6 @@ export const SocialSection = () => {
           <SocialHandle Icon={FacebookFilled} redirectionUrl={FACEBOOK_URL} />
         </div>
       </ConcentricCircles>
-    </aside>
+    </section>
   )
 }

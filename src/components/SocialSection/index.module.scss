@@ -5,6 +5,18 @@
   position: relative;
   width: 50%;
 
+  @include for-tablet-or-mobile {
+    max-height: 700px;
+    overflow: hidden;
+    width: 100%;
+
+    @include flex-center;
+  }
+
+  @include for-mobile-only {
+    max-height: 400px;
+  }
+
   .hero {
     position: absolute;
     transform: scale(0.8) translate(-45%, 50%);
@@ -14,7 +26,13 @@
     }
 
     @include for-tablet-or-mobile {
-      transform: scale(0.5) translate(-70%, 60%);
+      position: static;
+      transform: scale(0.55) translateY(25%);
+    }
+
+    @include for-mobile-only {
+      position: static;
+      transform: scale(0.3) translateY(10%);
     }
 
     bottom: 0;
@@ -27,6 +45,16 @@
     position: absolute;
     bottom: 25vh;
     left: 25vw;
+
+    @include for-tablet-or-mobile {
+      bottom: 30vh;
+      left: 65vw;
+    }
+
+    @include for-mobile-only {
+      bottom: 20vh;
+      left: 62vw;
+    }
   }
 
   .social_icons_container {
@@ -37,11 +65,11 @@
     }
 
     @include for-tablet-or-mobile {
-      @include put-on-circle(4, 180px, 45, -90);
+      @include put-on-circle(4, 180px, 35, -70);
     }
 
     @include for-mobile-only {
-      @include put-on-circle(4, 150px, 45, -90);
+      @include put-on-circle(4, 130px, 35, -80);
     }
   }
 }
