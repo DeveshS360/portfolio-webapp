@@ -34,6 +34,10 @@
     @include for-small-desktop {
       margin-left: calc((100% - var(--small-desktop-content-width)) / 2);
     }
+
+    @include for-tablet-or-mobile {
+      margin-left: calc((100% - var(--small-desktop-content-width)) / 2);
+    }
   }
 
   .about {
@@ -42,6 +46,10 @@
     line-height: 1.5;
 
     font-family: 'Cormorant-Bold';
+
+    @include for-tablet-or-mobile {
+      margin-top: 25px;
+    }
 
     .text {
       font-size: 75px;
@@ -55,6 +63,14 @@
       @include for-small-desktop {
         font-size: 45px;
       }
+
+      @include for-tablet-or-mobile {
+        font-size: 45px;
+      }
+
+      @include for-mobile-only {
+        font-size: 35px;
+      }
     }
 
     .name {
@@ -66,6 +82,14 @@
 
       @include for-small-desktop {
         font-size: 60px;
+      }
+
+      @include for-tablet-or-mobile {
+        font-size: 60px;
+      }
+
+      @include for-mobile-only {
+        font-size: 50px;
       }
     }
 
@@ -93,6 +117,10 @@
     color: var(--text-color-secondary);
     max-width: 450px;
     margin-top: 50px;
+
+    @include for-tablet-or-mobile {
+      margin-top: 20px;
+    }
   }
 
   .resume {
