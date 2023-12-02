@@ -9,6 +9,10 @@
   .main {
     display: flex;
     justify-content: space-between;
+
+    @include for-tablet-or-mobile {
+      display: block;
+    }
   }
 
   .top_left_circle {
@@ -38,14 +42,31 @@
     line-height: 1.5;
 
     font-family: 'Cormorant-Bold';
+
     .text {
-      font-size: 4vw;
+      font-size: 75px;
       position: relative;
       z-index: var(--introduction_z_index);
+
+      @include for-medium-desktop {
+        font-size: 60px;
+      }
+
+      @include for-small-desktop {
+        font-size: 45px;
+      }
     }
 
     .name {
-      font-size: 5vw;
+      font-size: 90px;
+
+      @include for-medium-desktop {
+        font-size: 75px;
+      }
+
+      @include for-small-desktop {
+        font-size: 60px;
+      }
     }
 
     .underline {

@@ -3,6 +3,7 @@ import {
   checkIfMediumDesktop,
   checkIfMobileOrTablet,
   checkIfSmallDesktop,
+  checkifMobile,
 } from 'src/constants/screen'
 
 export const useWindowScroll = (scrollFn: () => void) => {
@@ -41,12 +42,14 @@ export const useDeviceWidth = () => {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(
     checkIfMobileOrTablet()
   )
+  const [isMobile, setIsMobile] = useState(checkifMobile())
 
   const handleWindowResize = () => {
     setIsSmallDesktop(checkIfSmallDesktop())
     setIsMediumDesktop(checkIfMediumDesktop)
 
     setIsMobileOrTablet(checkIfMobileOrTablet())
+    setIsMobile(checkifMobile())
   }
   useEffect(() => {
     window.addEventListener('resize', handleWindowResize)
@@ -56,5 +59,5 @@ export const useDeviceWidth = () => {
     }
   }, [])
 
-  return { isMediumDesktop, isSmallDesktop, isMobileOrTablet }
+  return { isMediumDesktop, isSmallDesktop, isMobileOrTablet, isMobile }
 }

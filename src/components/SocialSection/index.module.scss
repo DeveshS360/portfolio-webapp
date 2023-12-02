@@ -1,36 +1,47 @@
 @import '../../styles/mixins.scss';
 
 .social_section {
-    background: inherit;
-    position: relative;
-    width: 50%;
+  background: inherit;
+  position: relative;
+  width: 50%;
 
-    .hero {
-        position: absolute;
-        transform: scale(0.8) translate(-45%, 50%);
+  .hero {
+    position: absolute;
+    transform: scale(0.8) translate(-45%, 50%);
 
-        @include for-small-desktop {
-            transform: scale(0.6) translate(-70%, 60%);
-        }
-        
-        bottom: 0;
-        left: 5%;
-        z-index: var(--hero_z_index);
-        pointer-events: none;
+    @include for-small-desktop {
+      transform: scale(0.6) translate(-70%, 60%);
     }
 
-    .circles {
-        position: absolute;
-        bottom: 25vh;
-        left: 25vw;
+    @include for-tablet-or-mobile {
+      transform: scale(0.5) translate(-70%, 60%);
     }
 
-    .social_icons_container {
+    bottom: 0;
+    left: 5%;
+    z-index: var(--hero_z_index);
+    pointer-events: none;
+  }
 
-      @include put-on-circle(4, 260px, 45, -90);
+  .circles {
+    position: absolute;
+    bottom: 25vh;
+    left: 25vw;
+  }
 
-      @include for-small-desktop {
-        @include put-on-circle(4, 210px, 45, -90);
-      }
+  .social_icons_container {
+    @include put-on-circle(4, 260px, 45, -90);
+
+    @include for-small-desktop {
+      @include put-on-circle(4, 210px, 45, -90);
     }
+
+    @include for-tablet-or-mobile {
+      @include put-on-circle(4, 180px, 45, -90);
+    }
+
+    @include for-mobile-only {
+      @include put-on-circle(4, 150px, 45, -90);
+    }
+  }
 }

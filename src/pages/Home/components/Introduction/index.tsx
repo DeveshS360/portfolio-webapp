@@ -8,7 +8,6 @@ import { useDeviceWidth } from 'src/utils/viewport'
 
 export const Introduction = () => {
   const { isSmallDesktop, isMobileOrTablet } = useDeviceWidth()
-  console.log(isSmallDesktop, 'is small desktop', isMobileOrTablet, 'is mobile')
 
   return (
     <section className={styles.introduction}>

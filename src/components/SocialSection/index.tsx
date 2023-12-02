@@ -17,15 +17,28 @@ import {
 import { useDeviceWidth } from 'src/utils/viewport'
 
 export const SocialSection = () => {
-  const { isSmallDesktop } = useDeviceWidth()
+  const { isSmallDesktop, isMobileOrTablet, isMobile } = useDeviceWidth()
+
+  const getCircleSize = () => {
+    if (isSmallDesktop) return 300
+    if (isMobile) return 300
+    if (isMobileOrTablet) return 360
+
+    return 400
+  }
+
+  const getCircularGap = () => {
+    if (isMobileOrTablet) return 0
+    return 60
+  }
 
   return (
     <aside className={styles.social_section}>
       <img className={styles.hero} src={heroImgUrl} alt="hero" />
       <ConcentricCircles
         className={styles.circles}
-        circularGap={60}
-        size={isSmallDesktop ? 300 : 400}
+        circularGap={getCircularGap()}
+        size={getCircleSize()}
         boldIdx={2}
       >
         <div className={styles.social_icons_container}>
