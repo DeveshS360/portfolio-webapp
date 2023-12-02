@@ -32,7 +32,7 @@
 
     @include for-mobile-only {
       position: static;
-      transform: scale(0.3) translateY(10%);
+      transform: scale(0.3) translateY(15%);
     }
 
     bottom: 0;
@@ -48,12 +48,12 @@
 
     @include for-tablet-or-mobile {
       bottom: 30vh;
-      left: 65vw;
+      left: 62vw;
     }
 
     @include for-mobile-only {
       bottom: 20vh;
-      left: 62vw;
+      left: 58vw;
     }
   }
 
@@ -69,7 +69,7 @@
     }
 
     @include for-mobile-only {
-      @include put-on-circle(4, 130px, 35, -80);
+      @include put-on-circle(4, 130px, 35, -65);
     }
   }
 }
