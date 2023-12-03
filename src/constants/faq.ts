@@ -29,6 +29,6 @@ export const FAQ_LIST: FaqCardProps[] = [
   {
     heading: 'Why is Performance Optimization crucial in Frontend Development?',
     content: `Optimizing performance involves minimizing load times and ensuring smooth interactions, contributing to a better user experience and improved search engine rankings.`,
-    serialNo: 5,
+    serialNo: 6,
   },
 ]
