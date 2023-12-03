@@ -8,6 +8,10 @@
     @include responsive-width;
     padding: 100px 0;
 
+    @include for-tablet-or-mobile {
+      padding: 60px 0;
+    }
+
     .contact_ways {
       margin: 80px 0;
       padding: 80px 50px;
@@ -16,9 +20,17 @@
       gap: 40px 0;
       background: var(--bg-color-primary);
 
+      @include for-mobile-only {
+        padding: 40px 25px;
+      }
+
       .card {
         background: var(--bg-color-secondary);
         padding: 30px;
+
+        @include for-mobile-only {
+          padding: 15px;
+        }
 
         * {
           font-family: 'Poppins-Regular';
@@ -39,10 +51,19 @@
       background: var(--bg-color-primary);
       padding: 60px 40px;
 
+      @include for-tablet-or-mobile {
+        padding: 40px 30px;
+      }
+
       .heading {
         color: var(--text-color-primary);
         font-family: 'Cormorant-Semibold';
         font-size: 50px;
+
+        @include for-tablet-or-mobile {
+          font-size: 40px;
+          margin-top: 0;
+        }
       }
 
       .socials {

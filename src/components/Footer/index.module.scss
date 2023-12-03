@@ -7,6 +7,11 @@
   .content {
     @include nav-footer;
 
+    @include for-tablet-or-mobile {
+      flex-direction: column-reverse;
+      gap: 20px 0;
+    }
+
     padding: 25px 0;
 
     .text {

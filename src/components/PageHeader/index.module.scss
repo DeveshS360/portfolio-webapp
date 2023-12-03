@@ -1,3 +1,5 @@
+@import 'src/styles/mixins.scss';
+
 .page_header {
   .bottom_circle {
     left: unset;
@@ -6,6 +8,14 @@
   }
   .content_wrapper {
     padding: 40px 100px 100px;
+
+    @include for-tablet-or-mobile {
+      padding: 30px 80px 80px;
+    }
+
+    @include for-tablet-or-mobile {
+      padding: 20px 50px 50px;
+    }
 
     .content {
       margin: 0 auto;
@@ -19,6 +29,14 @@
         font-family: 'Cormorant-Regular';
         color: var(--text-color-primary);
         margin-bottom: 30px;
+
+        @include for-tablet-or-mobile {
+          font-size: 60px;
+        }
+
+        @include for-mobile-only {
+          font-size: 40px;
+        }
       }
 
       .pages_capsule {

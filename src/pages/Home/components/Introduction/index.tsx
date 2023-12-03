@@ -36,7 +36,7 @@ export const Introduction = () => {
           <div className={styles.resume}>
             <DownloadResume />
           </div>
-          <WorkSampleVideo />
+          <WorkSampleVideo className={isMobileOrTablet && styles.work_sample} />
         </section>
         {!isMobileOrTablet && <SocialSection />}
       </div>
