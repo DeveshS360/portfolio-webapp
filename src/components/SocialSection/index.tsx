@@ -34,7 +34,12 @@ export const SocialSection = () => {
 
   return (
     <section className={styles.social_section}>
-      <img className={styles.hero} src={heroImgUrl} alt="hero" />
+      <img
+        loading="eager"
+        className={styles.hero}
+        src={heroImgUrl}
+        alt="hero"
+      />
       <ConcentricCircles
         className={styles.circles}
         circularGap={getCircularGap()}
