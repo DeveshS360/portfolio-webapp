@@ -8,7 +8,7 @@ import { AppRoutes } from 'src/constants/routes'
 import { useDeviceWidth } from 'src/utils/viewport'
 
 export const PageHeader = (props: PageHeaderProps) => {
-  const { isSmallDesktop } = useDeviceWidth()
+  const { isSmallDesktop, isMobileOrTablet } = useDeviceWidth()
   const {
     title,
     redirectionPage = 'Home',
@@ -18,11 +18,13 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   return (
     <div className={cx(layoutStyles.introduction, styles.page_header)}>
-      <ConcentricCircles
-        className={layoutStyles.top_left_circle}
-        circularGap={isSmallDesktop ? 55 : 65}
-        size={700}
-      />
+      {!isMobileOrTablet && (
+        <ConcentricCircles
+          className={layoutStyles.top_left_circle}
+          circularGap={isSmallDesktop ? 55 : 65}
+          size={700}
+        />
+      )}
       <NavigationHeader />
       <div className={styles.content_wrapper}>
         <div className={styles.content}>
@@ -36,11 +38,13 @@ export const PageHeader = (props: PageHeaderProps) => {
           </div>
         </div>
       </div>
-      <ConcentricCircles
-        className={cx(layoutStyles.bottom_left_circle, styles.bottom_circle)}
-        circularGap={isSmallDesktop ? 55 : 65}
-        size={700}
-      />
+      {!isMobileOrTablet && (
+        <ConcentricCircles
+          className={cx(layoutStyles.bottom_left_circle, styles.bottom_circle)}
+          circularGap={isSmallDesktop ? 55 : 65}
+          size={700}
+        />
+      )}
     </div>
   )
 }

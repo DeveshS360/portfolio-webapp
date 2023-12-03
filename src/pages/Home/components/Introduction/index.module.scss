@@ -38,6 +38,10 @@
     @include for-tablet-or-mobile {
       margin-left: calc((100% - var(--small-desktop-content-width)) / 2);
     }
+
+    .work_sample {
+      justify-content: start;
+    }
   }
 
   .about {

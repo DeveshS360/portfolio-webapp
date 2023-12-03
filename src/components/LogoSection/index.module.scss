@@ -10,6 +10,7 @@
   margin-top: -3px;
   position: relative;
   z-index: var(--introduction_z_index);
+  cursor: pointer;
 
   @include for-mobile-only {
     font-size: 28px;

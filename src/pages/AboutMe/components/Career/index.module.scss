@@ -2,15 +2,33 @@
 
 .career {
   padding-bottom: 200px;
+
+  @include for-tablet-or-mobile {
+    padding-bottom: 0;
+  }
+
   .toggle_exptertise {
     @include flex-align-center;
     @include responsive-width;
     margin: 100px auto;
 
+    @include for-tablet-or-mobile {
+      margin: 70px auto;
+    }
+
     .btn_container {
       @include flex-align-justify-spacebw;
       width: 100%;
-      gap: 0px 30px;
+      gap: 0 30px;
+
+      @include for-tablet-or-mobile {
+        gap: 0 20px;
+      }
+
+      @include for-mobile-only {
+        flex-direction: column;
+        gap: 30px 0;
+      }
 
       .expertise {
         outline: none;
@@ -20,7 +38,7 @@
         padding: 18px;
         text-align: center;
         font-family: 'Cormorant-Regular';
-        font-size: 4vw;
+        font-size: 50px;
         color: var(--text-color-primary);
         cursor: pointer;
         transition:
@@ -31,6 +49,15 @@
           background: var(--bg-color-secondary);
           border: 1px solid var(--bg-color-primary);
           transition: all 0.3s linear;
+        }
+
+        @include for-tablet-or-mobile {
+          padding: 10px;
+          font-size: 40px;
+        }
+
+        @include for-mobile-only {
+          font-size: 30px;
         }
       }
     }
@@ -44,6 +71,10 @@
       padding: 0;
       align-items: unset;
 
+      @include for-tablet-or-mobile {
+        flex-direction: column;
+      }
+
       .timeline {
         flex: 1.5;
         padding: 40px 0;
@@ -51,6 +82,11 @@
         border-bottom: unset;
         border-top: unset;
         min-width: 250px;
+
+        @include for-tablet-or-mobile {
+          border: 1px solid var(--gray-border-color-secondary);
+          padding: 0;
+        }
 
         .duration {
           width: 100%;
@@ -60,13 +96,29 @@
           border-right: 2px solid var(--text-color-primary);
           color: var(--text-color-secondary);
           font-size: 16px;
+
+          @include for-tablet-or-mobile {
+            border-right: 8px solid var(--text-color-primary);
+            margin: 10px 0;
+            text-align: start;
+          }
+
+          @include for-mobile-only {
+            border-width: 3px;
+            margin: 5px;
+            padding: 16px 20px;
+          }
         }
       }
 
       &:first-child {
         .timeline {
           border-top: 1px solid var(--gray-border-color-secondary);
-          padding-top: 80px;
+          padding: 0;
+
+          @include for-tablet-or-mobile {
+            padding: 0;
+          }
         }
       }
 
@@ -74,6 +126,10 @@
         .timeline {
           border-bottom: 1px solid var(--gray-border-color-secondary);
           padding-bottom: 80px;
+
+          @include for-tablet-or-mobile {
+            padding: 0;
+          }
         }
       }
 
@@ -81,16 +137,32 @@
         flex: 3.5;
         padding-left: 100px;
 
+        @include for-tablet-or-mobile {
+          padding-left: unset;
+        }
+
         .title {
           font-family: 'Cormorant-Semibold';
           color: var(--text-color-primary);
           font-size: 40px;
+
+          @include for-tablet-or-mobile {
+            margin: 10px 0;
+          }
+
+          @include for-mobile-only {
+            font-size: 30px;
+          }
         }
 
         .subtitle,
         .description {
           font-family: 'Poppins-Regular';
           color: var(--text-color-secondary);
+        }
+
+        @include for-tablet-or-mobile {
+          margin-bottom: 70px;
         }
       }
     }

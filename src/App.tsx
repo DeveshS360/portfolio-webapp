@@ -6,8 +6,10 @@ import { AboutMe } from './pages/AboutMe'
 import { PageNotFound } from './pages/PageNotFound'
 import { FAQ } from './pages/FAQ'
 import { ContactMe } from './pages/ContactMe'
+import { useDeviceWidth } from './utils/viewport'
 
 export const App = () => {
+  const { isMobileOrTablet } = useDeviceWidth()
   return (
     <>
       <Routes>

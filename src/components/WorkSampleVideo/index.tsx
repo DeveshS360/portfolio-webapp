@@ -3,15 +3,16 @@ import styles from './index.module.scss'
 import { EmbeddedVideo } from '../EmbeddedVideo'
 import { WORK_SAMPLE_VIDEO_SOURCE } from 'src/constants/common'
 import { WorkSampleVideoProps } from './types'
+import cx from 'classnames'
 
 export const WorkSampleVideo = (props: WorkSampleVideoProps) => {
   const [showVideo, setShowVideo] = useState(false)
 
-  const { isDisplayTitle = true } = props
+  const { isDisplayTitle = true, className = '' } = props
 
   return (
     <>
-      <div className={styles.work_sample_video}>
+      <div className={cx(styles.work_sample_video, className)}>
         <button className={styles.round_btn} onClick={() => setShowVideo(true)}>
           <span className={styles.icon}></span>
         </button>
