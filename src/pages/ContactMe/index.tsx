@@ -16,14 +16,17 @@ import {
   InstagramFilled,
   LinkedinFilled,
 } from '@ant-design/icons'
+import { useDeviceWidth } from 'src/utils/viewport'
 
 export const ContactMe = () => {
+  const { isMobile } = useDeviceWidth()
+
   return (
     <div className={styles.contact_me}>
       <PageHeader title="Contact Me" currPage="Contact" />
       <div className={styles.content}>
         <section>
-          <GoogleMapLocation />
+          <GoogleMapLocation height={isMobile ? 300 : 500} />
         </section>
         <section className={styles.contact_ways}>
           {CONTACT_WAYS.map((contact) => {

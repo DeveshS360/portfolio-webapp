@@ -11,6 +11,15 @@
 
     padding: 100px 0;
 
+    @include for-tablet-or-mobile {
+      padding: 60px 0;
+      gap: 0 30px;
+    }
+
+    @include for-mobile-only {
+      flex-direction: column-reverse;
+    }
+
     .info {
       flex: 1;
       flex-shrink: 0;
@@ -18,12 +27,20 @@
         color: var(--text-color-primary);
         font-family: 'Cormorant-Semibold';
         font-size: 60px;
+
+        @include for-tablet-or-mobile {
+          font-size: 40px;
+        }
       }
 
       .subtitle {
         color: var(--text-color-primary);
         font-family: 'Cormorant-Regular';
         font-size: 30px;
+
+        @include for-tablet-or-mobile {
+          font-size: 25px;
+        }
       }
 
       .description {
@@ -35,6 +52,10 @@
         font-size: 14px;
         margin-top: 50px;
         padding: 24px 40px;
+
+        @include for-tablet-or-mobile {
+          padding: 20px 25px;
+        }
 
         &::after {
           content: '';
@@ -53,6 +74,10 @@
 
     .astronaut {
       flex: 1;
+
+      @include for-tablet-or-mobile {
+        flex: 1.5;
+      }
     }
   }
 }
