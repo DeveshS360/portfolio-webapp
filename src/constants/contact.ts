@@ -12,7 +12,7 @@ export const CONTACT_WAYS: Record<string, string>[] = [
     value: 'sharmadevesh360@gmail.com',
   },
   {
-    key: 'Webiste',
+    key: 'Website',
     value: PROJECT_URLS.portfolioWebApp,
   },
   {
